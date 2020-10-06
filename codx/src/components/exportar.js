@@ -1,8 +1,8 @@
 import React from 'react'
-
+import { Button } from 'reactstrap';
 
 export const Exp = () => {
     return(
-        <div>Guardar</div>
+        <div><Button id="Exportador" color="primary">Guardar</Button></div>
     )
 }

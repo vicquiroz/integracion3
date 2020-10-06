@@ -11,3 +11,18 @@
     margin-top: 100px;
     border: 2px solid #000;
 }
+
+#Examinador{
+    width: 170px;
+    height: 200px;
+    margin-top: 200px;
+    border: 2px solid #000;
+    position: relative;
+    border-style: dotted;
+}
+
+#Exportador{
+    width: 120px;
+    height: 100px;
+    
+}

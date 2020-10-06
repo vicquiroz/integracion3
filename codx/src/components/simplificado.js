@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { Nav, NavItem, Button } from 'reactstrap';
 import './comps.css';
 
 export const Sim = (props) => {
