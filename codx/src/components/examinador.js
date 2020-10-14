@@ -1,25 +1,36 @@
-import React from 'react';
-import {useDropzone} from 'react-dropzone';
+import React, {useCallback} from 'react'
+import {useDropzone} from 'react-dropzone'
+import './comps.css';
 
-export const Exa = (props) => {
-    const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
 
-    const files = acceptedFiles.map(file => (
-      <li key={file.path}>
-        {file.path} - {file.size} bytes
-      </li>
-    ));
+
+export const Exa = () => {
+  const onDrop = useCallback((acceptedFiles) => {
+    acceptedFiles.forEach((file) => {
+      const reader = new FileReader()
+
+      reader.onabort = () => console.log('file reading was aborted')
+      reader.onerror = () => console.log('file reading has failed')
+      reader.onload = () => {
+      // Do whatever you want with the file contents
+        const datos = reader.result
+        console.log(datos)
+        //Dat({datos})
+      }
+      reader.readAsText(file)
+    })
+    
+  }, [])
+  const {getRootProps, getInputProps} = useDropzone({onDrop})
 
   return (
-    <section id="Examinador">
-      <div {...getRootProps({className: 'dropzone'})}>
-        <input {...getInputProps()} />
-        <p>Arrastra o haz click para subir un archivo</p>
-      </div>
-      <aside>
-        <h4>Archivos</h4>
-        <ul>{files}</ul>
-      </aside>
-    </section>
-  );
+    <div id="Examinador" {...getRootProps()}>
+    <input {...getInputProps()} />
+    <p>Drag 'n' drop some files here, or click to select files</p>
+    </div>
+    
+  )
+    
+    
+  
 }
