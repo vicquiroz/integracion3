@@ -1,10 +1,15 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useState} from 'react'
 import {useDropzone} from 'react-dropzone'
 import './comps.css';
 
 
 
-export const Exa = () => {
+export const Exa = (props) => {
+
+  
+
+  const [archivo,setArchivo] = useState(0)
+
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader()
@@ -14,8 +19,10 @@ export const Exa = () => {
       reader.onload = () => {
       // Do whatever you want with the file contents
         const datos = reader.result
-        console.log(datos)
-        //Dat({datos})
+        setArchivo(datos)
+        props.res(datos)
+        console.log('archivo aceptado')
+        //console.log(archivo)
       }
       reader.readAsText(file)
     })

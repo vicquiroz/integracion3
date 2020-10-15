@@ -1,8 +1,8 @@
 import React from 'react'
 import './comps.css';
 
-export const Vis = () => {
+export const Vis = (props) => {
     return(
-        <div id="Visualizador"></div>
+        <div id="Visualizador"><p>{props.env}</p></div>
     )
 }

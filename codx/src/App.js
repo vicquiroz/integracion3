@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Vis} from './components/visualizador'
 import {Exa} from './components/examinador'
 import {Sim} from './components/simplificado'
@@ -9,23 +9,29 @@ import { Container, Row, Col } from 'reactstrap';
 //import './App.css';
 
 function App() {
+
+  const [archivo,setArchivo] = useState(0)
+
+  const Res = (archivoRes)=>{
+    setArchivo(archivoRes)
+  }
   return (
     
     <Container>
       <Row>
         <Col>
-          <Vis/>
+          <Vis env={archivo}/>
         </Col>
         <Col>
           <Sim/>
         </Col>
         <Col>
-          <Exa/>
+          <Exa res={Res}/>
         </Col>
       </Row>
       <Row>
         <Col md={{ offset: 10 }}>
-          <Exp/>
+          <Exp env={archivo}/>
         </Col>
       </Row>
     </Container>
