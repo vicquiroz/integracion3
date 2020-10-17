@@ -9,13 +9,13 @@ export const Sim = (props) => {
       <p>Manejo BD</p>
       <Nav vertical>
         <NavItem>
-          <Button color="primary" onClick={GetDatos}>Consulta</Button>
+          <Button color="primary" onClick={()=>GetDatos()}>Consulta</Button>
         </NavItem>
         <NavItem>
-          <Button color="primary" onClick={PostDatos}>Actualizar</Button>
+          <Button color="primary" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
         </NavItem>
         <NavItem>
-        <Button color="primary" href="#">Eliminar</Button>
+          <Button color="primary" href="#">Eliminar</Button>
         </NavItem>
         <NavItem>
           <Button disabled href="#">boton en mantenimiento</Button>

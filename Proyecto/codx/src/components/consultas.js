@@ -17,8 +17,8 @@ export function GetDatos(){
     });
 }
 
-export function PostDatos(){
-    let data = JSON.stringify({"nombre":"Prueba","datoT":""});
+export function PostDatos(Archivo){
+    let data = JSON.stringify({"nombre":"Prueba","datoT":Archivo});
     let config = {
         method: 'post',
         url: 'http://localhost:8000/DB/api/datos1/',
