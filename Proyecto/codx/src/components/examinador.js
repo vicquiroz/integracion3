@@ -3,18 +3,16 @@ import {useDropzone} from 'react-dropzone'
 import './comps.css';
 
 export const Exa = (props) => {
-  const [archivo,setArchivo]=useState()
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
     const reader = new FileReader()
-    reader.onabort = () => console.log('File reading was aborted')
-    reader.onerror = () => console.log('File reading has failed')
+    reader.onabort = () => console.log('lectura abortada')
+    reader.onerror = () => console.log('lectura fallada')
     reader.onload = () => {
-      // Do whatever you want with the file contents
+      // logica de archivos
       const datos = reader.result
-      setArchivo(datos)
       props.res(datos)
-      console.log("File reading was accepted")
+      console.log("El archivo fue aceptado")
     }
     reader.readAsText(file)
   })
