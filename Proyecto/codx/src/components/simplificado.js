@@ -1,6 +1,6 @@
 import React from 'react'
-import { Nav, NavItem, Button } from 'reactstrap';
-import {GetDatos,PostDatos} from './consultas';
+import { Nav, NavItem, Button,Input } from 'reactstrap';
+import {ConseguirArchivo, GetDatos,PostDatos} from './consultas';
 import './comps.css';
 
 export const Sim = (props) => {
@@ -9,16 +9,11 @@ export const Sim = (props) => {
       <p>Manejo BD</p>
       <Nav vertical>
         <NavItem>
-          <Button color="primary" onClick={()=>GetDatos()}>Consulta</Button>
+          <Button color="primary" onClick={()=>ConseguirArchivo(props,document.getElementById("ID").value)}>Consulta</Button>
+          <Input type="text" className="input-group mb-3" id="ID"></Input>
         </NavItem>
         <NavItem>
           <Button color="primary" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
-        </NavItem>
-        <NavItem>
-          <Button color="primary" href="#">Eliminar</Button>
-        </NavItem>
-        <NavItem>
-          <Button disabled href="#">boton en mantenimiento</Button>
         </NavItem>
       </Nav>
       <hr />

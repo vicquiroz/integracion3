@@ -20,7 +20,7 @@ function App() {
           <Vis env={archivo}/>
         </Col>
         <Col>
-          <Sim env={archivo}/>
+          <Sim env={archivo} res={Res}/>
         </Col>
         <Col>
           <Exa res={Res}/>
