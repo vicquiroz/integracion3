@@ -36,6 +36,16 @@ export function PostDatos(Archivo){
         });
 }
 
+function IsValidJSON(str){
+    try{
+        JSON.parse(str)
+    }
+    catch(event){
+        return false
+    }
+    return true
+}
+
 export function ConseguirArchivo(props,ID){
     let config = {
         method: 'GET',
@@ -47,7 +57,13 @@ export function ConseguirArchivo(props,ID){
     axios(config)
         .then((response) => {
             let Data=response.data;
-            props.res(Data.file)
+            if(IsValidJSON(Data.file)===true){
+                props.res(Data.file)
+            }
+            else{
+                alert("El archivo no es válido")
+                props.res(null)
+            }
         })
         .catch((error) => {
             console.log(error);

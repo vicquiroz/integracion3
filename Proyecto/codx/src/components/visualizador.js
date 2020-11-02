@@ -1,21 +1,25 @@
-import React, {useState,useEffect} from 'react'
+import React from 'react'
+import ReactJson from 'react-json-view'
 import './comps.css';
-
 export const Vis = (props) => {
-    const dato = props.env 
-    const [archivo,setArchivo]=useState()
-
-    useEffect(() => { 
-        if(dato!==undefined){
-            const datoJ = JSON.stringify(dato)
-            //console.log(JSON.parse(dato))
-            setArchivo(datoJ)
+    function IfNotNull(file){
+        if(file!=null){
+            console.log()
+            return(
+                <ReactJson  src={
+                    JSON.parse(file)
+                }
+                theme="brewer" collapsed="true"
+                onEdit="true"
+                />
+            )
         }
-        
-    },[dato,archivo]);
-    
-    
+    }
     return(
-    <div id="Visualizador"><p>{archivo}</p></div>
+    <div id="Visualizador">
+        {
+            IfNotNull(props.env)
+        }
+    </div>
     )
 }

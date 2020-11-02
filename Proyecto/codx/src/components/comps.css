@@ -3,6 +3,7 @@
     height: 450px;
     margin-top: 100px;
     border: 2px solid #000;
+    overflow: scroll;
 }
 
 #Simplificado{
