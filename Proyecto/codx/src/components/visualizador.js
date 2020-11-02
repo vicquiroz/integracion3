@@ -16,7 +16,7 @@ export const Vis = (props) => {
         }
     }
     return(
-    <div id="Visualizador">
+    <div id="Visualizador" class="scrollbar">
         {
             IfNotNull(props.env)
         }
