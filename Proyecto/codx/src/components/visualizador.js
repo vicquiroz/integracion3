@@ -1,10 +1,9 @@
-import React from 'react'
+import React,{Image} from 'react'
 import ReactJson from 'react-json-view'
 import './comps.css';
 export const Vis = (props) => {
     function IfNotNull(file){
         if(file!=null){
-            console.log()
             return(
                 <ReactJson  src={
                     JSON.parse(file)
@@ -15,11 +14,24 @@ export const Vis = (props) => {
             )
         }
     }
+    function Imagen(img){
+        if(img!=null){
+            return(
+                <img src={`data:image/gif;base64,${img}`} />
+            )
+        }
+    }
     return(
-    <div id="Visualizador" class="scrollbar">
+    <div id="Visualizador" className="scrollbar">
         {
             IfNotNull(props.env)
         }
+        <br></br>
+        <div>
+            {
+                Imagen(props.img)
+            }
+        </div>
     </div>
     )
 }

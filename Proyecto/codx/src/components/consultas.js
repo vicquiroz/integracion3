@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export function GetDatos(){
     let config = {
       method: 'GET',
@@ -64,6 +63,23 @@ export function ConseguirArchivo(props,ID){
                 alert("El archivo no es válido")
                 props.res(null)
             }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+export function Graficar(setImagen,ID){
+    let config = {
+        method: 'GET',
+        url: 'http://localhost:8000/estadistica/'+String(ID),
+        headers: { 
+            'Content-Type': 'application/json'
+        }
+    };
+    axios(config)
+        .then((response) => {
+            setImagen(response.data)
         })
         .catch((error) => {
             console.log(error);

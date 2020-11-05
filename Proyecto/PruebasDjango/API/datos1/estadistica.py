@@ -50,7 +50,7 @@ def suma(val):
     
 def graficar(ejex, ejey):
     ancho= 0.5 #ancho para el grafico de barras
-    plt.bar(ejex, ejey, ancho) #se pasan los datos para completar 
+    plt.bar(ejex, ejey, ancho, color=(0, 0.5, 1, 1)) #se pasan los datos para completar 
     plt.savefig('grafico.png', transparent=False)#se exporta el grafico en png
     #plt.show()
 

@@ -13,14 +13,18 @@ function App() {
   const Res=(archivoRes)=>{
     setArchivo(archivoRes)
   }
+  const [imagen,setImagen]=useState();
+  const Img=(imagenRes)=>{
+    setImagen(imagenRes)
+  }
   return (  
     <Container>
       <Row>
         <Col>
-          <Vis env={archivo}/>
+          <Vis env={archivo} img={imagen}/>
         </Col>
         <Col>
-          <Sim env={archivo} res={Res}/>
+          <Sim env={archivo} res={Res} setImagen={Img}/>
         </Col>
         <Col>
           <Exa res={Res}/>
