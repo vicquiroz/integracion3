@@ -13,6 +13,9 @@ django-rest-knox = "*"
 djongo = "*"
 django-cors-headers = "*"
 dnspython = "*"
+matplotlib = "*"
+pandas = "*"
+numpy = "==1.19.3"
 
 [requires]
 python_version = "3.8"

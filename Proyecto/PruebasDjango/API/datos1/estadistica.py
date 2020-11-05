@@ -52,7 +52,7 @@ def graficar(ejex, ejey):
     ancho= 0.5 #ancho para el grafico de barras
     plt.bar(ejex, ejey, ancho) #se pasan los datos para completar 
     plt.savefig('grafico.png', transparent=False)#se exporta el grafico en png
-    plt.show()
+    #plt.show()
 
 def tabla(dato):
     fig, ax = plt.subplots(dpi=500)
@@ -68,9 +68,9 @@ def tabla(dato):
     fig.tight_layout()
     plt.show()
 
-with open('His_clin.json', encoding='utf-8') as file: #abrir imagen con utf-8 para mayor comprension
-    dato = json.load(file) #guardamos el contenido del json en data
-    print(dato)
+
+#with open('His_clin.json', encoding='utf-8') as file: #abrir imagen con utf-8 para mayor comprension
+    #dato = json.load(file) #guardamos el contenido del json en data
     #print(data[0]['sesiones_medica'][0]['nombre_sesion'])
 
 
