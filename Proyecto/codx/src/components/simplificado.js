@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, NavItem, Button,Input } from 'reactstrap';
-import {ConseguirArchivo, GetDatos, PostDatos,Graficar} from './consultas';
+import {ConseguirArchivo, PostDatos,Graficar, GraficarDesdeArchivo} from './consultas';
 import './comps.css';
 
 export const Sim = (props) => {
@@ -15,16 +15,14 @@ export const Sim = (props) => {
         <NavItem>
           <Button color="primary" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
         </NavItem>
-        <NavItem>
-          <Button color="secondary" onClick={()=>Graficar(props.setImagen,document.getElementById("ID").value)}>Graficar</Button>
-        </NavItem>
       </Nav>
       <hr />
       <p>Data Science</p>
       <Nav vertical>
-        <Button color="primary" href="#">Metodo1</Button>
-        <Button color="primary" href="#">Metodo2</Button>
-        <Button color="primary" href="#">Metodo3</Button>
+        <Button color="primary" onClick={()=>GraficarDesdeArchivo(props.setImagen,props.env)}>Graficar Desde Archivo</Button>
+        <Button disabled href="#">Metodo1</Button>
+        <Button disabled href="#">Metodo2</Button>
+        <Button disabled href="#">Metodo3</Button>
         <Button disabled href="#">Metodo4</Button>
       </Nav>
     </div>

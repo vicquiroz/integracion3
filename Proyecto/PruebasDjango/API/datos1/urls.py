@@ -7,6 +7,6 @@ router = routers.DefaultRouter()
 router.register('',Visualizadordatos1)
 urlpatterns = [
     url(r'DB/',include(router.urls)),
-    url(r'testingP/(?P<parametro>[\w\-]+)/$',views.GetDatos),
-    url(r'estadistica/(?P<parametro>[\w\-]+)/$',views.Estadistica)
+    url(r'ObtieneArchivo/(?P<parametro>[\w\-]+)/$',views.GetDatos),
+    url(r'estadisticaDesdeArchivo/',views.EstadisticaDesdeArchivo)
 ]

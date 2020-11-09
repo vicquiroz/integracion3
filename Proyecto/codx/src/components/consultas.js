@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 export function GetDatos(){
     let config = {
       method: 'GET',
@@ -48,7 +49,7 @@ function IsValidJSON(str){
 export function ConseguirArchivo(props,ID){
     let config = {
         method: 'GET',
-        url: 'http://localhost:8000/testingP/'+String(ID),
+        url: 'http://localhost:8000/ObtieneArchivo/'+String(ID),
         headers: { 
             'Content-Type': 'application/json'
         }
@@ -69,13 +70,15 @@ export function ConseguirArchivo(props,ID){
         });
 }
 
-export function Graficar(setImagen,ID){
+export function GraficarDesdeArchivo(setImagen,Archivo){
+    console.log(Archivo)
     let config = {
-        method: 'GET',
-        url: 'http://localhost:8000/estadistica/'+String(ID),
+        method: 'POST',
+        url: 'http://localhost:8000/estadisticaDesdeArchivo/',
         headers: { 
             'Content-Type': 'application/json'
-        }
+        },
+        data:Archivo
     };
     axios(config)
         .then((response) => {
