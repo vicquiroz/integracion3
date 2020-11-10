@@ -22,10 +22,13 @@ def GetDatos(request,parametro):
 def EstadisticaDesdeArchivo(request):
     if request.method=='POST':
         parametro=request.data
-        #Si se desea pasar los parametros para graficar, se debe de hacer en esta linea
-        if(len(parametro)>0):
-            dato = json.loads(json.dumps(parametro))
-            res = estadistica.mostrar(dato,'sesiones_medica','nombre_profesional')
+        archivo=parametro[0]
+        parametro1=str(parametro[1][1])
+        parametro2=str(parametro[1][0])
+        if(len(archivo)>0):
+            dato = json.loads(archivo)
+            res = estadistica.mostrar(dato,parametro1,parametro2)
+            #res = estadistica.mostrar(dato,'sesiones_medica','nombre_profesional')
             nom,val = estadistica.suma(res)
             estadistica.graficar(nom, val)
             image_data=None

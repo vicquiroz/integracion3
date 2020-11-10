@@ -17,14 +17,18 @@ function App() {
   const Img=(imagenRes)=>{
     setImagen(imagenRes)
   }
+  const [campos,setCampos]=useState();
+  const Cmp=(camposRes)=>{
+    setCampos(camposRes)
+  }
   return (  
     <Container>
       <Row>
         <Col>
-          <Vis env={archivo} img={imagen}/>
+          <Vis env={archivo} img={imagen} setCampos={Cmp}/>
         </Col>
         <Col>
-          <Sim env={archivo} res={Res} setImagen={Img}/>
+          <Sim env={archivo} res={Res} setImagen={Img} camps={campos}/>
         </Col>
         <Col>
           <Exa res={Res}/>

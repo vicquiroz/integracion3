@@ -19,7 +19,7 @@ export const Sim = (props) => {
       <hr />
       <p>Data Science</p>
       <Nav vertical>
-        <Button color="primary" onClick={()=>GraficarDesdeArchivo(props.setImagen,props.env)}>Graficar Desde Archivo</Button>
+        <Button color="primary" onClick={()=>GraficarDesdeArchivo(props.setImagen,props.env,props.camps)}>Graficar Desde Archivo</Button>
         <Button disabled href="#">Metodo1</Button>
         <Button disabled href="#">Metodo2</Button>
         <Button disabled href="#">Metodo3</Button>

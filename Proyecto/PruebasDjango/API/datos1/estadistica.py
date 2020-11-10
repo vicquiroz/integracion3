@@ -20,7 +20,6 @@ def mostrar(dato,petUno,petDos):
         if (isinstance(dato[i][petUno], list)): #si la primera peticion es un arreglo
             for j in range(len(dato[i][petUno])): 
                 guar.append(dato[i][petUno][j][petDos]) #guarda los datos de la segunda peticion 
-                
         else: #sí el anterior no es un arreglo 
             guar.append(dato[i][petUno]) #se almacenan los datos 
     return(guar)        
@@ -52,6 +51,7 @@ def graficar(ejex, ejey):
     ancho= 0.5 #ancho para el grafico de barras
     plt.bar(ejex, ejey, ancho, color=(0, 0.5, 1, 1)) #se pasan los datos para completar 
     plt.savefig('grafico.png', transparent=False)#se exporta el grafico en png
+    plt.clf()
     #plt.show()
 
 def tabla(dato):

@@ -70,15 +70,15 @@ export function ConseguirArchivo(props,ID){
         });
 }
 
-export function GraficarDesdeArchivo(setImagen,Archivo){
-    console.log(Archivo)
+export function GraficarDesdeArchivo(setImagen,Archivo,Campos){
+    let FullData=[Archivo,Campos]
     let config = {
         method: 'POST',
         url: 'http://localhost:8000/estadisticaDesdeArchivo/',
         headers: { 
             'Content-Type': 'application/json'
         },
-        data:Archivo
+        data:FullData,
     };
     axios(config)
         .then((response) => {
