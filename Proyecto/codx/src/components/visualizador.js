@@ -11,6 +11,7 @@ export const Vis = (props) => {
         if(Seleccionados.includes(StrFields)===false){
             if(Seleccionados.length<1){
                 Seleccionados.push(StrFields)
+                ActualizarCampos(Seleccionados)
             }
         }
         else if(Seleccionados.includes(StrFields)===true){
@@ -28,8 +29,9 @@ export const Vis = (props) => {
                 "<li>"+String(Listado[pos])+"</li>"
             )
         }
-
-        let Campo=JSON.parse(Seleccionados[0])
+    }
+    function ActualizarCampos(Lista){
+        let Campo=JSON.parse(Lista[0])
         let Campo1=Campo["name"]
         let Campo2="";
         if(Campo["namespace"][1]!=null){

@@ -78,7 +78,7 @@ export function GraficarDesdeArchivo(setImagen,Archivo,Campos){
         headers: { 
             'Content-Type': 'application/json'
         },
-        data:FullData,
+        data:FullData
     };
     axios(config)
         .then((response) => {

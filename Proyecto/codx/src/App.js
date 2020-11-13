@@ -25,7 +25,7 @@ function App() {
     <Container>
       <Row>
         <Col>
-          <Vis env={archivo} img={imagen} setCampos={Cmp}/>
+          <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp}/>
         </Col>
         <Col>
           <Sim env={archivo} res={Res} setImagen={Img} camps={campos}/>

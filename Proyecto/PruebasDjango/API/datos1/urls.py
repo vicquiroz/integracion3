@@ -8,5 +8,8 @@ router.register('',Visualizadordatos1)
 urlpatterns = [
     url(r'DB/',include(router.urls)),
     url(r'ObtieneArchivo/(?P<parametro>[\w\-]+)/$',views.GetDatos),
-    url(r'estadisticaDesdeArchivo/',views.EstadisticaDesdeArchivo)
+    url(r'estadisticaDesdeArchivo/',views.EstadisticaDesdeArchivo),
+    url(r'medianaDesdeArchivo/',views.MedianaDesdeArchivo),
+    url(r'modaDesdeArchivo/',views.ModaDesdeArchivo),
+    url(r'desviacionEstandarDesdeArchivo/',views.DesviacionEstandarDesdeArchivo)
 ]

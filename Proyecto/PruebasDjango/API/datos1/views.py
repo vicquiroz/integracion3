@@ -7,6 +7,7 @@ from datos1.models import datos1
 from . import estadistica
 import json
 import base64
+
 # Create your views here.
 @api_view(['GET','POST','DELETE'])
 def GetDatos(request,parametro):
@@ -37,4 +38,53 @@ def EstadisticaDesdeArchivo(request):
         else:
             image_data=None
         return Response(image_data)
-    
+
+@api_view(['POST'])
+def ModaDesdeArchivo(request):
+    if request.method=='POST':
+        parametro=request.data
+        archivo=parametro[0]
+        parametro1=str(parametro[1][1])
+        parametro2=str(parametro[1][0])
+        if(len(archivo)>0):
+            dato = json.loads(archivo)
+            res = estadistica.mostrar(dato,parametro1,parametro2)
+            #Si es que res fuera cualquier tipo
+            estadigrafos=estadistica.CalcularModa(res)
+        else:
+            estadigrafos=None
+        return Response(estadigrafos)
+
+@api_view(['POST'])
+def MedianaDesdeArchivo(request):
+    if request.method=='POST':
+        parametro=request.data
+        archivo=parametro[0]
+        parametro1=str(parametro[1][1])
+        parametro2=str(parametro[1][0])
+        if(len(archivo)>0):
+            dato = json.loads(archivo)
+            res = estadistica.mostrar(dato,parametro1,parametro2)
+            estadigrafos=None
+            #Si es que res fuera numerico
+            #estadigrafos=estadistica.CalcularMediana(res)
+        else:
+            estadigrafos=None
+        return Response(estadigrafos)
+
+@api_view(['POST'])
+def DesviacionEstandarDesdeArchivo(request):
+    if request.method=='POST':
+        parametro=request.data
+        archivo=parametro[0]
+        parametro1=str(parametro[1][1])
+        parametro2=str(parametro[1][0])
+        if(len(archivo)>0):
+            dato = json.loads(archivo)
+            res = estadistica.mostrar(dato,parametro1,parametro2)
+            estadigrafos=None
+            #Si es que res fuera numerico
+            #estadigrafos=estadistica.CalcularDesviacionE(res)
+        else:
+            estadigrafos=None
+        return Response(estadigrafos)

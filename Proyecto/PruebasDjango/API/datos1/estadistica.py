@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 import pandas as pd
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+import statistics as stats
 
 def edad(dato):
     fecha = dato.split("-")
@@ -67,6 +68,36 @@ def tabla(dato):
     ax.table(cellText=df.values, rowLabels=["valor"],colLabels=df.columns,cellLoc='center', loc='center')
     fig.tight_layout()
     plt.show()
+
+def CalcularMedia(datos):
+    return ["Media",stats.mean(datos)]
+
+def CalcularModa(datos):
+    try:
+        MM=stats.multimode(datos)
+        M=stats.mode(datos)
+        return [["MultiModa",MM],["Moda",M]]
+    except:
+        print("ERROR - No se pueden ejecutar la funcion con los datos")
+
+def CalcularMediana(datos):
+    try:
+        M=stats.median(datos)
+        MG=stats.median_grouped(datos)
+        MA=stats.median_high(datos)
+        ML=stats.median_low(datos)
+        return [["Mediana",M],["MedianaAgrupada",MG],["MedianaAlta",MA],["MedianaBaja",ML]]
+    except:
+        print("ERROR - No se pueden ejecutar la funcion con los datos")
+
+def CalcularDesviacionE(datos):
+    try:
+        DVP=stats.stdev(datos)
+        DVM=stats.stdev(datos)
+        return [["DesviacionEstandarPoblacion",DVP],["DesviacionEstandarMuestra",DVM]]
+    except:
+        print("ERROR - No se pueden ejecutar la funcion con los datos")
+
 
 
 #with open('His_clin.json', encoding='utf-8') as file: #abrir imagen con utf-8 para mayor comprension
