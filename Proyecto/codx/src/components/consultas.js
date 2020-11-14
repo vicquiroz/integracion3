@@ -88,3 +88,60 @@ export function GraficarDesdeArchivo(setImagen,Archivo,Campos){
             console.log(error);
         });
 }
+
+export function MedianaDesdeArchivo(Archivo,Campos){
+    let FullData=[Archivo,Campos]
+    let config = {
+        method: 'POST',
+        url: 'http://localhost:8000/medianaDesdeArchivo/',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data:FullData
+    };
+    axios(config)
+        .then((response) => {
+            console.log(response.data)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+export function ModaDesdeArchivo(Archivo,Campos){
+    let FullData=[Archivo,Campos]
+    let config = {
+        method: 'POST',
+        url: 'http://localhost:8000/modaDesdeArchivo/',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data:FullData
+    };
+    axios(config)
+        .then((response) => {
+            console.log(response.data)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+export function DesviacionEstandarDesdeArchivo(Archivo,Campos){
+    let FullData=[Archivo,Campos]
+    let config = {
+        method: 'POST',
+        url: 'http://localhost:8000/desviacionEstandarDesdeArchivo/',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data:FullData
+    };
+    axios(config)
+        .then((response) => {
+            console.log(response.data)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
