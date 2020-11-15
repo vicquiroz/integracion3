@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, NavItem, Button,Input } from 'reactstrap';
-import {ConseguirArchivo, PostDatos,Graficar, GraficarDesdeArchivo, MedianaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
+import {ConseguirArchivo, PostDatos, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
 import './comps.css';
 
 import {Menu,MenuItem } from '@szhsin/react-menu';
@@ -24,9 +24,10 @@ export const Sim = (props) => {
       <Nav vertical>
       <Menu className=" bg-primary text-white" menuButton={
         <button className="btn btn-primary" >Calcular de Estadigrafo</button>}>
-          <MenuItem className=" bg-primary" onClick={()=>MedianaDesdeArchivo(props.env,props.camps)} >Media</MenuItem>
-          <MenuItem className=" bg-primary" onClick={()=>ModaDesdeArchivo(props.env,props.camps)}>Moda</MenuItem>
-          <MenuItem className=" bg-primary" onClick={()=>DesviacionEstandarDesdeArchivo(props.env,props.camps)}>Desviacion Estandar</MenuItem>
+          <MenuItem className=" bg-primary" onClick={()=>MedianaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)} >Mediana</MenuItem>
+          <MenuItem className=" bg-primary" onClick={()=>MediaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)} >Mediana Aritmetica</MenuItem>
+          <MenuItem className=" bg-primary" onClick={()=>ModaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)}>Moda</MenuItem>
+          <MenuItem className=" bg-primary" onClick={()=>DesviacionEstandarDesdeArchivo(props.setEstadigrafo,props.env,props.camps)}>Desviacion Estandar</MenuItem>
       </Menu>
         <Button color="primary" onClick={()=>GraficarDesdeArchivo(props.setImagen,props.env,props.camps)}>Graficar Desde Archivo</Button>
         <Button disabled href="#">Metodo1</Button>

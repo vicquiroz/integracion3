@@ -70,7 +70,7 @@ def tabla(dato):
     plt.show()
 
 def CalcularMedia(datos):
-    return ["Media",stats.mean(datos)]
+    return [["Media",stats.mean(datos)]]
 
 def CalcularModa(datos):
     try:

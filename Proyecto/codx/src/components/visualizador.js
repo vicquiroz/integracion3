@@ -1,6 +1,7 @@
 import React,{Image} from 'react'
 import ReactJson from 'react-json-view'
 import './comps.css';
+import {Table} from 'reactstrap';
 export const Vis = (props) => {
     var Seleccionados=[];
     function onEdit(fields){
@@ -30,7 +31,9 @@ export const Vis = (props) => {
             )
         }
     }
+
     function ActualizarCampos(Lista){
+        
         let Campo=JSON.parse(Lista[0])
         let Campo1=Campo["name"]
         let Campo2="";
@@ -65,6 +68,47 @@ export const Vis = (props) => {
             )
         }
     }
+
+    function estadigrafo(estf){
+
+        if(estf!=null){
+            
+            var Titulo=[]
+            var Valor=[]
+            for(let x in estf){
+                let Campos=estf[x]  
+                Titulo.push(String(Campos[0]))
+                Valor.push(String(Campos[1]))
+
+            }   
+        
+            //document.getElementById("estf").innerHTML="<Table striped bordered hover>"
+            //document.getElementById("estf").innerHTML+="<thead> <tr> "
+           // for(let x in Ordenar){
+             //   document.getElementById("estf").innerHTML+=(
+                    //"<th>"+String(Ordenar[x])+"</th>"
+                     
+               // )
+            //}
+            //document.getElementById("estf").innerHTML+="</tr> </thead> </Table> "
+            console.log(estf)
+            
+            return( <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>{String(Titulo)}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{String(Valor)}</td>
+                            </tr>
+                        </tbody>
+                    </Table>)
+        }
+        
+    }
+
     return(
     <div id="Visualizador" className="scrollbar">
         {
@@ -75,11 +119,17 @@ export const Vis = (props) => {
         </br>
         <div>
             Seleccionados:
-            <p id="Listado"></p>
+            <ul id="Listado"></ul>
+            <div id="estf"> </div>
+          
         </div>
+
         <div>
             {
                 Imagen(props.img)
+            }
+            {
+               estadigrafo(props.est)
             }
         </div>
     </div>

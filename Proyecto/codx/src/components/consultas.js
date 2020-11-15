@@ -89,7 +89,7 @@ export function GraficarDesdeArchivo(setImagen,Archivo,Campos){
         });
 }
 
-export function MedianaDesdeArchivo(Archivo,Campos){
+export function MedianaDesdeArchivo(Estadigrafo,Archivo,Campos){
     let FullData=[Archivo,Campos]
     let config = {
         method: 'POST',
@@ -101,14 +101,33 @@ export function MedianaDesdeArchivo(Archivo,Campos){
     };
     axios(config)
         .then((response) => {
-            console.log(response.data)
+            Estadigrafo(response.data)
         })
         .catch((error) => {
             console.log(error);
         });
 }
 
-export function ModaDesdeArchivo(Archivo,Campos){
+export function MediaDesdeArchivo(Estadigrafo,Archivo,Campos){
+    let FullData=[Archivo,Campos]
+    let config = {
+        method: 'POST',
+        url: 'http://localhost:8000/mediaDesdeArchivo/',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data:FullData
+    };
+    axios(config)
+        .then((response) => {
+            Estadigrafo(response.data)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+export function ModaDesdeArchivo(Estadigrafo,Archivo,Campos){
     let FullData=[Archivo,Campos]
     let config = {
         method: 'POST',
@@ -120,14 +139,14 @@ export function ModaDesdeArchivo(Archivo,Campos){
     };
     axios(config)
         .then((response) => {
-            console.log(response.data)
+            Estadigrafo(response.data)
         })
         .catch((error) => {
             console.log(error);
         });
 }
 
-export function DesviacionEstandarDesdeArchivo(Archivo,Campos){
+export function DesviacionEstandarDesdeArchivo(Estadigrafo,Archivo,Campos){
     let FullData=[Archivo,Campos]
     let config = {
         method: 'POST',
@@ -139,7 +158,7 @@ export function DesviacionEstandarDesdeArchivo(Archivo,Campos){
     };
     axios(config)
         .then((response) => {
-            console.log(response.data)
+            Estadigrafo(response.data)
         })
         .catch((error) => {
             console.log(error);

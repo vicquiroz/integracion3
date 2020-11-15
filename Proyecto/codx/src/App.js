@@ -21,15 +21,19 @@ function App() {
   const Cmp=(camposRes)=>{
     setCampos(camposRes)
   }
+  const [estadigrafo,setEstadigrafo]=useState();
+  const Est=(estadigrafoRes)=>{
+    setEstadigrafo(estadigrafoRes)
+  }
   
   return (  
     <Container>
       <Row>
         <Col>
-          <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp}/>
+          <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp} est={estadigrafo}/>
         </Col>
         <Col>
-          <Sim env={archivo} res={Res} setImagen={Img} camps={campos}/>
+          <Sim env={archivo} res={Res} setImagen={Img} camps={campos} setEstadigrafo={Est}/>
         </Col>
         <Col>
           <Exa res={Res}/>
