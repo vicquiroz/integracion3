@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'mediaDesdeArchivo/',views.MediaDesdeArchivo),
     url(r'medianaDesdeArchivo/',views.MedianaDesdeArchivo),
     url(r'modaDesdeArchivo/',views.ModaDesdeArchivo),
-    url(r'desviacionEstandarDesdeArchivo/',views.DesviacionEstandarDesdeArchivo)
+    url(r'desviacionEstandarDesdeArchivo/',views.DesviacionEstandarDesdeArchivo),
+    url(r'tablaFDesdeArchivo/',views.TablaFrecuenciaDesdeArchivo)
 ]

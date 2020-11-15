@@ -29,9 +29,9 @@ def EstadisticaDesdeArchivo(request):
         image_data=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            res = estadistica.mostrar(dato,parametro1,parametro2)
-            nom,val = estadistica.suma(res)
-            estadistica.graficar(nom, val)
+            res = estadistica.Mostrar(dato,parametro1,parametro2)
+            nom,val = estadistica.Suma(res)
+            estadistica.Graficar(nom, val)
             with open("grafico.png", "rb") as image_file:
                 image_data = base64.b64encode(image_file.read()).decode('utf-8')
         return Response(image_data)
@@ -46,9 +46,8 @@ def ModaDesdeArchivo(request):
         estadigrafos=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            res = estadistica.mostrar(dato,parametro1,parametro2)
+            res = estadistica.Mostrar(dato,parametro1,parametro2)
             estadigrafos=estadistica.CalcularModa(res)
-        print(estadigrafos)
         return Response(estadigrafos)
 
 @api_view(['POST'])
@@ -61,18 +60,8 @@ def MediaDesdeArchivo(request):
         estadigrafos=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            res = estadistica.mostrar(dato,parametro1,parametro2)
-            if(type(res[0])==str):
-                if(parametro1=="fecha_nacimiento" or parametro2=="fecha_nacimiento"):
-                    edades=[]
-                    for fecha in res:
-                        edades.append(estadistica.edad(fecha))
-                    estadigrafos=estadistica.CalcularMedia(edades)
-                else:
-                    nom,val = estadistica.suma(res)
-                    estadigrafos=estadistica.CalcularMedia(val)
-            if(type(res[0])==int):
-                estadigrafos=estadistica.CalcularMedia(res)
+            res = estadistica.Mostrar(dato,parametro1,parametro2)
+            estadigrafos=estadistica.Comparador(res,estadistica.CalcularMedia,parametro1,parametro2)
         return Response(estadigrafos)
 
 @api_view(['POST'])
@@ -85,18 +74,8 @@ def MedianaDesdeArchivo(request):
         estadigrafos=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            res = estadistica.mostrar(dato,parametro1,parametro2)
-            if(type(res[0])==str):
-                if(parametro1=="fecha_nacimiento" or parametro2=="fecha_nacimiento"):
-                    edades=[]
-                    for fecha in res:
-                        edades.append(estadistica.edad(fecha))
-                    estadigrafos=estadistica.CalcularMediana(edades)
-                else:
-                    nom,val = estadistica.suma(res)
-                    estadigrafos=estadistica.CalcularMediana(val)
-            if(type(res[0])==int):
-                estadigrafos=estadistica.CalcularMediana(res)
+            res = estadistica.Mostrar(dato,parametro1,parametro2)
+            estadigrafos=estadistica.Comparador(res,estadistica.CalcularMediana,parametro1,parametro2)
         return Response(estadigrafos)
 
 @api_view(['POST'])
@@ -109,16 +88,25 @@ def DesviacionEstandarDesdeArchivo(request):
         estadigrafos=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            res = estadistica.mostrar(dato,parametro1,parametro2)
-            if(type(res[0])==str):
-                if(parametro1=="fecha_nacimiento" or parametro2=="fecha_nacimiento"):
-                    edades=[]
-                    for fecha in res:
-                        edades.append(estadistica.edad(fecha))
-                    estadigrafos=estadistica.CalcularDesviacionE(edades)
-                else:
-                    nom,val = estadistica.suma(res)
-                    estadigrafos=estadistica.CalcularDesviacionE(val)
-            if(type(res[0])==int):
-                estadigrafos=estadistica.CalcularDesviacionE(res)
+            res = estadistica.Mostrar(dato,parametro1,parametro2)
+            estadigrafos=estadistica.Comparador(res,estadistica.CalcularDesviacionE,parametro1,parametro2)
         return Response(estadigrafos)
+
+@api_view(['POST'])
+def TablaFrecuenciaDesdeArchivo(request):
+    if request.method=='POST':
+        parametro=request.data
+        archivo=parametro[0]
+        parametro1=str(parametro[1][1])
+        parametro2=str(parametro[1][0])
+        estadigrafos=None
+        if(len(archivo)>0):
+            dato = json.loads(archivo)
+            res = estadistica.Mostrar(dato,parametro1,parametro2)
+            Aprobado=estadistica.Comparador(res,estadistica.TablaFrecuencia,parametro1,parametro2)
+            if(Aprobado==True):
+                with open("tabla.png", "rb") as image_file:
+                    image_data = base64.b64encode(image_file.read()).decode('utf-8')
+                return Response(image_data)
+            else:
+                return Response(False)

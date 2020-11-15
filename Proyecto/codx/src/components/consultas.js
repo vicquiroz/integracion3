@@ -164,3 +164,28 @@ export function DesviacionEstandarDesdeArchivo(Estadigrafo,Archivo,Campos){
             console.log(error);
         });
 }
+
+
+export function TablaFrecuenciasDesdeArchivo(SetTablaF,Archivo,Campos){
+    let FullData=[Archivo,Campos]
+    let config = {
+        method: 'POST',
+        url: 'http://localhost:8000/tablaFDesdeArchivo/',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data:FullData
+    };
+    axios(config)
+        .then((response) => {
+            if(response.data!=false){
+                SetTablaF(response.data)
+            }
+            else{
+                alert("No se ha podido realizar la tabla")
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}

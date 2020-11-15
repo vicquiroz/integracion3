@@ -17,6 +17,10 @@ function App() {
   const Img=(imagenRes)=>{
     setImagen(imagenRes)
   }
+  const [tablaf,setTablaF]=useState();
+  const Tf=(imagenRes)=>{
+    setTablaF(imagenRes)
+  }
   const [campos,setCampos]=useState();
   const Cmp=(camposRes)=>{
     setCampos(camposRes)
@@ -30,10 +34,10 @@ function App() {
     <Container>
       <Row>
         <Col>
-          <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp} est={estadigrafo}/>
+          <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp} est={estadigrafo} tf={tablaf}/>
         </Col>
         <Col>
-          <Sim env={archivo} res={Res} setImagen={Img} camps={campos} setEstadigrafo={Est}/>
+          <Sim env={archivo} res={Res} setImagen={Img} camps={campos} setEstadigrafo={Est} setTablaF={Tf}/>
         </Col>
         <Col>
           <Exa res={Res}/>

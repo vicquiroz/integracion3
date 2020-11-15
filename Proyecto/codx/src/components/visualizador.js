@@ -101,14 +101,12 @@ export const Vis = (props) => {
                         </tbody>
                     </Table>)
         }
-        
     }
 
     return(
     <div id="Visualizador" className="scrollbar">
         {
             IfNotNull(props.env)
-            
         }
         <br>
         </br>
@@ -116,16 +114,11 @@ export const Vis = (props) => {
             Seleccionados:
             <ul id="Listado"></ul>
             <div id="estf"> </div>
-          
         </div>
-
         <div>
-            {
-                Imagen(props.img)
-            }
-            {
-               estadigrafo(props.est)
-            }
+            {estadigrafo(props.est)}
+            {Imagen(props.img)}
+            {Imagen(props.tf)}
         </div>
     </div>
     )
