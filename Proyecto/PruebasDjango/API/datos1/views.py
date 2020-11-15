@@ -26,17 +26,14 @@ def EstadisticaDesdeArchivo(request):
         archivo=parametro[0]
         parametro1=str(parametro[1][1])
         parametro2=str(parametro[1][0])
+        image_data=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
             res = estadistica.mostrar(dato,parametro1,parametro2)
-            #res = estadistica.mostrar(dato,'sesiones_medica','nombre_profesional')
             nom,val = estadistica.suma(res)
             estadistica.graficar(nom, val)
-            image_data=None
             with open("grafico.png", "rb") as image_file:
                 image_data = base64.b64encode(image_file.read()).decode('utf-8')
-        else:
-            image_data=None
         return Response(image_data)
 
 @api_view(['POST'])
@@ -46,13 +43,36 @@ def ModaDesdeArchivo(request):
         archivo=parametro[0]
         parametro1=str(parametro[1][1])
         parametro2=str(parametro[1][0])
+        estadigrafos=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
             res = estadistica.mostrar(dato,parametro1,parametro2)
-            #Si es que res fuera cualquier tipo
             estadigrafos=estadistica.CalcularModa(res)
-        else:
-            estadigrafos=None
+        print(estadigrafos)
+        return Response(estadigrafos)
+
+@api_view(['POST'])
+def MediaDesdeArchivo(request):
+    if request.method=='POST':
+        parametro=request.data
+        archivo=parametro[0]
+        parametro1=str(parametro[1][1])
+        parametro2=str(parametro[1][0])
+        estadigrafos=None
+        if(len(archivo)>0):
+            dato = json.loads(archivo)
+            res = estadistica.mostrar(dato,parametro1,parametro2)
+            if(type(res[0])==str):
+                if(parametro1=="fecha_nacimiento" or parametro2=="fecha_nacimiento"):
+                    edades=[]
+                    for fecha in res:
+                        edades.append(estadistica.edad(fecha))
+                    estadigrafos=estadistica.CalcularMedia(edades)
+                else:
+                    nom,val = estadistica.suma(res)
+                    estadigrafos=estadistica.CalcularMedia(val)
+            if(type(res[0])==int):
+                estadigrafos=estadistica.CalcularMedia(res)
         return Response(estadigrafos)
 
 @api_view(['POST'])
@@ -62,14 +82,21 @@ def MedianaDesdeArchivo(request):
         archivo=parametro[0]
         parametro1=str(parametro[1][1])
         parametro2=str(parametro[1][0])
+        estadigrafos=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
             res = estadistica.mostrar(dato,parametro1,parametro2)
-            estadigrafos=None
-            #Si es que res fuera numerico
-            #estadigrafos=estadistica.CalcularMediana(res)
-        else:
-            estadigrafos=None
+            if(type(res[0])==str):
+                if(parametro1=="fecha_nacimiento" or parametro2=="fecha_nacimiento"):
+                    edades=[]
+                    for fecha in res:
+                        edades.append(estadistica.edad(fecha))
+                    estadigrafos=estadistica.CalcularMediana(edades)
+                else:
+                    nom,val = estadistica.suma(res)
+                    estadigrafos=estadistica.CalcularMediana(val)
+            if(type(res[0])==int):
+                estadigrafos=estadistica.CalcularMediana(res)
         return Response(estadigrafos)
 
 @api_view(['POST'])
@@ -79,12 +106,19 @@ def DesviacionEstandarDesdeArchivo(request):
         archivo=parametro[0]
         parametro1=str(parametro[1][1])
         parametro2=str(parametro[1][0])
+        estadigrafos=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
             res = estadistica.mostrar(dato,parametro1,parametro2)
-            estadigrafos=None
-            #Si es que res fuera numerico
-            #estadigrafos=estadistica.CalcularDesviacionE(res)
-        else:
-            estadigrafos=None
+            if(type(res[0])==str):
+                if(parametro1=="fecha_nacimiento" or parametro2=="fecha_nacimiento"):
+                    edades=[]
+                    for fecha in res:
+                        edades.append(estadistica.edad(fecha))
+                    estadigrafos=estadistica.CalcularDesviacionE(edades)
+                else:
+                    nom,val = estadistica.suma(res)
+                    estadigrafos=estadistica.CalcularDesviacionE(val)
+            if(type(res[0])==int):
+                estadigrafos=estadistica.CalcularDesviacionE(res)
         return Response(estadigrafos)
