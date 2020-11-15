@@ -12,22 +12,26 @@ export const Sim = (props) => {
       <p>Manejo BD</p>
       <Nav vertical>
         <NavItem>
-          <Button color="primary" onClick={()=>ConseguirArchivo(props,document.getElementById("ID").value)}>Consulta</Button>
-          <Input type="text" className="input-group mb-3" id="ID"></Input>
-        </NavItem>
-        <NavItem>
-          <Button color="primary" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
+          <div className="input-group input-group-sm">
+            <div className="col-auto">
+              <Input type="text" className="form-control bg-dark border border-primary text-white" id="ID"></Input>
+            </div>
+          </div>
+          <div className="btn-group btn-sm">
+            <Button color="success" onClick={()=>ConseguirArchivo(props,document.getElementById("ID").value)}>Consulta</Button>
+            <Button color="info" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
+          </div>
         </NavItem>
       </Nav>
       <hr />
       <p>Data Science</p>
       <Nav vertical>
-      <Menu className=" bg-primary text-white" menuButton={
+      <Menu className=" bg-info text-white border border-primary" menuButton={
         <button className="btn btn-primary" >Calcular de Estadigrafo</button>}>
-          <MenuItem className=" bg-primary" onClick={()=>MedianaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)} >Mediana</MenuItem>
-          <MenuItem className=" bg-primary" onClick={()=>MediaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)} >Mediana Aritmetica</MenuItem>
-          <MenuItem className=" bg-primary" onClick={()=>ModaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)}>Moda</MenuItem>
-          <MenuItem className=" bg-primary" onClick={()=>DesviacionEstandarDesdeArchivo(props.setEstadigrafo,props.env,props.camps)}>Desviacion Estandar</MenuItem>
+          <MenuItem className=" bg-info" onClick={()=>MedianaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)} >Mediana</MenuItem>
+          <MenuItem className=" bg-info" onClick={()=>MediaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)} >Mediana Aritmetica</MenuItem>
+          <MenuItem className=" bg-info" onClick={()=>ModaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)}>Moda</MenuItem>
+          <MenuItem className=" bg-info" onClick={()=>DesviacionEstandarDesdeArchivo(props.setEstadigrafo,props.env,props.camps)}>Desviacion Estandar</MenuItem>
       </Menu>
         <Button color="primary" onClick={()=>GraficarDesdeArchivo(props.setImagen,props.env,props.camps)}>Graficar Desde Archivo</Button>
         <Button disabled href="#">Metodo1</Button>

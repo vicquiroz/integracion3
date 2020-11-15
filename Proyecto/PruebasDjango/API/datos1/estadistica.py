@@ -76,7 +76,7 @@ def CalcularModa(datos):
     try:
         MM=stats.multimode(datos)
         M=stats.mode(datos)
-        return [["MultiModa",MM],["Moda",M]]
+        return [["Multimoda",MM],["Moda",M]]
     except:
         print("ERROR - No se pueden ejecutar la funcion con los datos")
 
@@ -86,7 +86,7 @@ def CalcularMediana(datos):
         MG=stats.median_grouped(datos)
         MA=stats.median_high(datos)
         ML=stats.median_low(datos)
-        return [["Mediana",M],["MedianaAgrupada",MG],["MedianaAlta",MA],["MedianaBaja",ML]]
+        return [["Mediana",M],["Mediana Agrupada",MG],["Mediana Alta",MA],["Mediana Baja",ML]]
     except:
         print("ERROR - No se pueden ejecutar la funcion con los datos")
 
@@ -94,7 +94,7 @@ def CalcularDesviacionE(datos):
     try:
         DVP=stats.stdev(datos)
         DVM=stats.stdev(datos)
-        return [["DesviacionEstandarPoblacion",DVP],["DesviacionEstandarMuestra",DVM]]
+        return [["Desviación Estándar Poblacion",DVP],["Desviación Estándar Muestra",DVM]]
     except:
         print("ERROR - No se pueden ejecutar la funcion con los datos")
 

@@ -55,7 +55,7 @@ export const Vis = (props) => {
                     JSON.parse(file)
                 }
                 theme="brewer" collapsed="1"
-                onEdit={(file)=>onEdit(file)}
+                //onEdit={(file)=>onEdit(file)}
                 onSelect={(file)=>onSelect(file)}
                 />
             )
@@ -70,38 +70,33 @@ export const Vis = (props) => {
     }
 
     function estadigrafo(estf){
-
         if(estf!=null){
-            
             var Titulo=[]
             var Valor=[]
             for(let x in estf){
                 let Campos=estf[x]  
                 Titulo.push(String(Campos[0]))
                 Valor.push(String(Campos[1]))
-
             }   
-        
-            //document.getElementById("estf").innerHTML="<Table striped bordered hover>"
-            //document.getElementById("estf").innerHTML+="<thead> <tr> "
-           // for(let x in Ordenar){
-             //   document.getElementById("estf").innerHTML+=(
-                    //"<th>"+String(Ordenar[x])+"</th>"
-                     
-               // )
-            //}
-            //document.getElementById("estf").innerHTML+="</tr> </thead> </Table> "
-            console.log(estf)
-            
-            return( <Table striped bordered hover>
-                        <thead>
+            var DOMParse=new DOMParser()
+            let headers=[];
+            for(let x in Titulo){
+                headers.push(<th>{Titulo[x]}</th>)
+            }
+            let body=[];
+            for(let x in Valor){
+                body.push(<th>{Valor[x]}</th>)
+            }
+            console.log(headers)
+            return( <Table className="table">
+                        <thead className="table-dark">
                             <tr>
-                                <th>{String(Titulo)}</th>
+                                {headers}
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="table-secondary">
                             <tr>
-                                <td>{String(Valor)}</td>
+                                {body}
                             </tr>
                         </tbody>
                     </Table>)
