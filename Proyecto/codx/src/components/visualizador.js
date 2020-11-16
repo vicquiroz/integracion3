@@ -78,7 +78,6 @@ export const Vis = (props) => {
                 Titulo.push(String(Campos[0]))
                 Valor.push(String(Campos[1]))
             }   
-            var DOMParse=new DOMParser()
             let headers=[];
             for(let x in Titulo){
                 headers.push(<th>{Titulo[x]}</th>)
@@ -105,19 +104,23 @@ export const Vis = (props) => {
 
     return(
     <div id="Visualizador" className="scrollbar">
-        {
-            IfNotNull(props.env)
-        }
-        <br>
-        </br>
-        <div>
+        <div className="seleccionados">
             Seleccionados:
             <ul id="Listado"></ul>
             <div id="estf"> </div>
         </div>
         <div>
             {estadigrafo(props.est)}
+        </div>
+        <div className="split left">
+        {
+            IfNotNull(props.env)
+        }
+        </div>
+        <div className="split right">
             {Imagen(props.img)}
+        </div>
+        <div className="split right down">
             {Imagen(props.tf)}
         </div>
     </div>

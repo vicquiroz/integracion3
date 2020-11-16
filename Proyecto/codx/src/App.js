@@ -5,6 +5,12 @@ import {Sim} from './components/simplificado'
 import {Exp} from './components/exportar'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 //import './App.css';
 
@@ -30,8 +36,20 @@ function App() {
     setEstadigrafo(estadigrafoRes)
   }
   
-  return (  
-    <Container>
+  return (
+    <Router>
+    <div className="container" path="/">
+      <Sim env={archivo} res={Res} setImagen={Img} camps={campos} setEstadigrafo={Est} setTablaF={Tf}/>
+      <Exa res={Res}/>
+    </div>
+    <hr />
+    <Switch>
+      <Route path="/">
+      <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp} est={estadigrafo} tf={tablaf}/>
+      </Route>
+    </Switch>
+  </Router>  
+    /**<Container>
       <Row>
         <Col>
           <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp} est={estadigrafo} tf={tablaf}/>
@@ -49,7 +67,8 @@ function App() {
         </Col>
       </Row>
     </Container>
-  );
+  ***/
+    );
 }
 
 export default App;

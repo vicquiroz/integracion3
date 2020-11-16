@@ -178,7 +178,7 @@ export function TablaFrecuenciasDesdeArchivo(SetTablaF,Archivo,Campos){
     };
     axios(config)
         .then((response) => {
-            if(response.data!=false){
+            if(response.data!==false){
                 SetTablaF(response.data)
             }
             else{

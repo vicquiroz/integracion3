@@ -9,8 +9,9 @@ import '@szhsin/react-menu/dist/index.css';
 export const Sim = (props) => {
   return (
     <div id="Simplificado">
-      <p>Manejo BD</p>
-      <Nav vertical>
+      
+      <Nav>
+        <p>Manejo BD</p>
         <NavItem>
           <div className="input-group input-group-sm">
             <div className="col-auto">
@@ -22,10 +23,9 @@ export const Sim = (props) => {
             <Button color="info" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
           </div>
         </NavItem>
-      </Nav>
       <hr />
       <p>Data Science</p>
-      <Nav vertical>
+      <hr />
       <Menu className=" bg-info text-white border border-primary" menuButton={
         <button className="btn btn-primary" >Calcular de Estadigrafo</button>}>
           <MenuItem className=" bg-info" onClick={()=>MedianaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)} >Mediana</MenuItem>
@@ -36,7 +36,6 @@ export const Sim = (props) => {
         <Button color="primary" onClick={()=>GraficarDesdeArchivo(props.setImagen,props.env,props.camps)}>Graficar Desde Archivo</Button>
         <Button color="primary" onClick={()=>TablaFrecuenciasDesdeArchivo(props.setTablaF,props.env,props.camps)}>Tabla de Frecuencias</Button>
         <Button disabled href="#">Metodo2</Button>
-        <Button disabled href="#">Metodo3</Button>
       </Nav>
     </div>
   );
