@@ -1,0 +1,1055 @@
+[{
+  "_id": {
+    "$oid": "5f5649b068730c38051a8683"
+  },
+  "nombre": "Isabella",
+  "apellidos": "Larraín Valdés",
+  "rut": "14484267-7",
+  "direccion": "Manuel Rodríguez 182",
+  "fecha_nacimiento": "1992-12-20",
+  "ciudad": "Punta Arenas",
+  "profesionales_que_atendieron": [
+    16,
+    64
+  ],
+  "sesiones_medica": [
+    {
+      "nombre_sesion": "Lessión rodilla",
+      "fecha": "09/07/2020",
+      "nombre_profesional": "Sofía Martínez Ruiz",
+      "profesion": "Médico Pediatra",
+      "centro_salud": "Hospital Dr. Hernán Henríquez Aravena",
+      "arquetipos": [
+        [
+          {
+            "tipo": 1,
+            "clave": "Running",
+            "valor": "Running"
+          },
+          {
+            "tipo": 2,
+            "clave": "items",
+            "valor": "items"
+          },
+          {
+            "tipo": 4,
+            "clave": "Distance",
+            "valor": "10 km."
+          },
+          {
+            "tipo": 4,
+            "clave": "Duration",
+            "valor": "1 hora."
+          },
+          {
+            "tipo": 4,
+            "clave": "Speed",
+            "valor": "2 m/s."
+          },
+          {
+            "tipo": 4,
+            "clave": "Pace",
+            "valor": "Lorem ipsum dolor sit amet."
+          },
+          {
+            "tipo": 4,
+            "clave": "Footwear",
+            "valor": "Vestibulum id commodo nibh."
+          },
+          {
+            "tipo": 4,
+            "clave": "Step length",
+            "valor": "Curabitur fermentum magna"
+          },
+          {
+            "tipo": 4,
+            "clave": "Distance type",
+            "valor": "Middle-distance"
+          },
+          {
+            "tipo": 4,
+            "clave": "Terrain",
+            "valor": "Rough terrain"
+          },
+          {
+            "tipo": 4,
+            "clave": "Cadence",
+            "valor": "Fusce vitae nunc "
+          },
+          {
+            "tipo": 4,
+            "clave": "Extension",
+            "valor": "Donec quis rhoncus magna, eu tincidunt metus. Etiam tincidunt dictum odio, blandit pellentesque lorem laoreet eu. Nam blandit sem mi, ut blandit libero viverra non. Morbi id quam tellus. Morbi a varius ex. Proin a eros euismod, tempus ante nec, porta libero. Maecenas at maximus velit, eu hendrerit diam. "
+          }
+        ],
+        [
+          {
+            "tipo": 1,
+            "clave": "Examination of a lesion",
+            "valor": "Examination of a lesion"
+          },
+          {
+            "tipo": 2,
+            "clave": "items",
+            "valor": "items"
+          },
+          {
+            "tipo": 4,
+            "clave": "Lesion type",
+            "valor": "Donec vestibulum elementum congue."
+          },
+          {
+            "tipo": 4,
+            "clave": "Alias",
+            "valor": "Sed lectus risus."
+          },
+          {
+            "tipo": 4,
+            "clave": "Clinical description",
+            "valor": "Nunc suscipit blandit elementum. Proin quis tincidunt odio. Aliquam ac tellus in dui consequat tempor sollicitudin nec metus. Aenean id ipsum id urna dictum semper. Maecenas imperdiet orci nec vehicula eleifend. Duis ut quam accumsan, pulvinar lorem eu, blandit felis. Nunc ultricies nibh nec molestie commodo. Aenean sed commodo turpis. Quisque leo leo, maximus non odio sed, scelerisque accumsan tellus. Nunc rhoncus ex eu orci finibus gravida. Aliquam erat volutpat. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Body site",
+            "valor": "Sed feugiat."
+          },
+          {
+            "tipo": 4,
+            "clave": "Structured body site",
+            "valor": "Nunc congue hendrerit fermentum. Cras sed lacus feugiat, facilisis quam et, posuere ex. Pellentesque facilisis odio congue, vestibulum lacus nec, vestibulum ligula."
+          },
+          {
+            "tipo": 4,
+            "clave": "Examination findings",
+            "valor": "Vestibulum ac pellentesque felis. Aliquam aliquam fringilla lorem, at hendrerit arcu vulputate nec. Fusce vehicula ut mi vitae laoreet. In finibus, leo bibendum feugiat lacinia, massa diam porta justo, sit amet vestibulum felis nibh ut urna. Proin vitae odio tellus. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Multimedia representation",
+            "valor": "Sed ac risus sed dolor semper dictum et nec nulla. Morbi ligula massa, efficitur commodo lobortis in, tempus id purus. Etiam eget justo ante. Donec tristique orci nec odio congue, vel posuere massa porta"
+          },
+          {
+            "tipo": 4,
+            "clave": "Clinical interpretation",
+            "valor": " Fusce fringilla elit vitae velit tempus, et hendrerit sapien hendrerit. Praesent molestie felis non urna condimentum iaculis. In facilisis ultrices molestie. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Comment",
+            "valor": "Suspendisse eget euismod risus. Nulla lorem odio, rhoncus non interdum at, euismod a lorem. Phasellus laoreet, tortor in finibus dictum, ante arcu fermentum magna, non gravida ipsum neque quis eros. Proin eu enim eros. Fusce posuere gravida facilisis. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Examination not done",
+            "valor": "Mauris at massa vel lorem laoreet posuere. Sed aliquam rhoncus lacinia."
+          }
+        ]
+      ]
+    },
+    {
+      "nombre_sesion": "Síntomas Covid-19",
+      "fecha": "09/07/2020",
+      "nombre_profesional": "Andres Zapata Torres",
+      "profesion": "Médico Internista",
+      "centro_salud": "Hospital San Jorge",
+      "arquetipos": [
+        [
+          {
+            "tipo": 1,
+            "clave": "Covid 19 Admission",
+            "valor": "Covid 19 Admission"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Hospital admission status",
+            "valor": "YES"
+          },
+          {
+            "tipo": 4,
+            "clave": "Date first admitted",
+            "valor": "1/8/2020"
+          }
+        ],
+        [
+          {
+            "tipo": 1,
+            "clave": "COVID - procedure summary",
+            "valor": "COVID - procedure summary"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 3,
+            "clave": "Procedure",
+            "valor": "Procedure"
+          },
+          {
+            "tipo": 4,
+            "clave": "Procedure name",
+            "valor": "Isolation"
+          },
+          {
+            "tipo": 4,
+            "clave": "Status",
+            "valor": "Yes"
+          },
+          {
+            "tipo": 4,
+            "clave": "Procedure date",
+            "valor": "2/8/2020"
+          },
+          {
+            "tipo": 2,
+            "clave": "protocol",
+            "valor": "protocol"
+          },
+          {
+            "tipo": 4,
+            "clave": "Report phase",
+            "valor": "Confirmed diagnosis"
+          },
+          {
+            "tipo": 4,
+            "clave": "Extension",
+            "valor": "Morbi auctor interdum ante, sit amet tincidunt ipsum commodo id. Nullam vestibulum a augue nec tristique. Etiam aliquet auctor mauris vitae vestibulum. "
+          }
+        ],
+        [
+          {
+            "tipo": 1,
+            "clave": "COVID outcomes",
+            "valor": "COVID outcomes"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Health outcome",
+            "valor": "Recovered/healthy"
+          },
+          {
+            "tipo": 4,
+            "clave": "Date of release or death",
+            "valor": "14/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Total number of contacts",
+            "valor": "Unknown"
+          }
+        ]
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5f565f4a68730c38051a8685"
+  },
+  "nombre": "Mateo",
+  "apellidos": "Contreras Silva",
+  "rut": "11181529-1",
+  "direccion": "Gabriela Mistral 987",
+  "fecha_nacimiento": "1994-09-11",
+  "ciudad": "Arica",
+  "profesionales_que_atendieron": [
+    45,
+    16,
+    64
+  ],
+  "sesiones_medica": [
+    {
+      "nombre_sesion": "Cancer Colorrectal, sesión 1",
+      "fecha": "09/07/2020",
+      "nombre_profesional": "Amelia Smith Ruiz ",
+      "profesion": "Médico Nefrólogo ",
+      "centro_salud": "Hospital San Jose",
+      "arquetipos": [
+        [
+          {
+            "tipo": 1,
+            "clave": "Macroscopic findings - Colorectal cancer",
+            "valor": "Macroscopic findings - Colorectal cancer"
+          },
+          {
+            "tipo": 2,
+            "clave": "items",
+            "valor": "items"
+          },
+          {
+            "tipo": 4,
+            "clave": "Tumour dimensions",
+            "valor": "Nam accumsan dolor sit amet faucibus facilisis. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Maximum extramuscular extension",
+            "valor": "Donec nec sollicitudin est, a dapibus massa. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Distance of tumour to nearest cut-end",
+            "valor": " Donec viverra, massa non imperdiet imperdiet."
+          },
+          {
+            "tipo": 4,
+            "clave": "Distance of tumour to circumferential margin",
+            "valor": "Duis sed imperdiet mauris."
+          },
+          {
+            "tipo": 4,
+            "clave": "Distance of tumour from dentate line",
+            "valor": "Orci varius natoque penatibus et magnis dis parturient montes"
+          },
+          {
+            "tipo": 4,
+            "clave": "Anastomotic doughnuts submitted",
+            "valor": "Yes"
+          },
+          {
+            "tipo": 3,
+            "clave": "Tumour perforation",
+            "valor": "Tumour perforation"
+          },
+          {
+            "tipo": 4,
+            "clave": "Tumour perforation",
+            "valor": "Present"
+          },
+          {
+            "tipo": 4,
+            "clave": "Perforation location",
+            "valor": "Retro/infra peritoneal"
+          },
+          {
+            "tipo": 4,
+            "clave": "Comment",
+            "valor": "Fusce faucibus, sem id auctor commodo, quam felis facilisis diam, eget ullamcorper tellus mi dapibus lacus. Suspendisse tristique ultrices tortor in egestas. Integer leo ligula, cursus vitae magna quis, bibendum tristique libero. Maecenas placerat quam arcu, at accumsan lectus pellentesque eget. Aliquam a sodales leo, eu dictum diam. Etiam in ex aliquam, maximus odio sit amet, porta diam. Nulla nisi mauris, cursus sed finibus vel, pretium sit amet arcu. Fusce ac ipsum mollis, fermentum lorem ac, luctus augue. Etiam dictum volutpat nisl, id sodales ante. Sed nec justo at quam mollis varius ac sed nunc. Aenean et nisi sed enim vestibulum fringilla. "
+          },
+          {
+            "tipo": 3,
+            "clave": "For rectal tumours",
+            "valor": "For rectal tumours"
+          },
+          {
+            "tipo": 4,
+            "clave": "Relationship to anterior peritoneal reflection",
+            "valor": "Entirely above"
+          },
+          {
+            "tipo": 4,
+            "clave": "Intactness of the mesorectum",
+            "valor": "Nearly complete"
+          }
+        ]
+      ]
+    },
+    {
+      "nombre_sesion": "Consulta Antropometría",
+      "fecha": "09/07/2020",
+      "nombre_profesional": "Sofía Martínez Ruiz",
+      "profesion": "Médico Pediatra",
+      "centro_salud": "Hospital Dr. Hernán Henríquez Aravena",
+      "arquetipos": [
+        [
+          {
+            "tipo": 1,
+            "clave": "Body segment area",
+            "valor": "Body segment area"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Any event",
+            "valor": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id commodo nibh. Curabitur fermentum magna eu velit lacinia lacinia. Morbi facilisis lorem eget lobortis sodales."
+          },
+          {
+            "tipo": 2,
+            "clave": "protocol",
+            "valor": "protocol"
+          },
+          {
+            "tipo": 4,
+            "clave": "Measuring device",
+            "valor": "Donec tempor lorem non elit ullamcorper, nec tristique neque cursus. Fusce vitae nunc eget est commodo mattis. Cras vel varius leo. Suspendisse potenti."
+          },
+          {
+            "tipo": 4,
+            "clave": "Measurement method",
+            "valor": "Suspendisse ultrices sed tellus eget egestas. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Measurement origin/endpoint",
+            "valor": "Cras ullamcorper felis dolor."
+          },
+          {
+            "tipo": 4,
+            "clave": "Structured origin/endpoint",
+            "valor": "Vivamus dui nulla, mollis volutpat elit eget, facilisis venenatis purus. In eget erat hendrerit risus elementum bibendum. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Extension",
+            "valor": "Nulla maximus eleifend augue. Integer posuere venenatis condimentum. Sed luctus, libero non vehicula pellentesque, dui turpis blandit eros, sed vehicula nibh risus ut nisl. Donec sed scelerisque felis. Extension"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Body segment name",
+            "valor": "Upper arm muscle area"
+          },
+          {
+            "tipo": 4,
+            "clave": "Laterality",
+            "valor": "Right"
+          },
+          {
+            "tipo": 4,
+            "clave": "Area",
+            "valor": "Suspendisse id lectus scelerisque"
+          },
+          {
+            "tipo": 4,
+            "clave": "Comment",
+            "valor": "Pellentesque tellus turpis, efficitur sed orci non, faucibus volutpat sapien. In congue, lacus ut ullamcorper maximus, velit felis dignissim eros, non aliquam sapien massa ac nunc. Mauris molestie a purus a interdum. Nullam urna dui, pharetra iaculis ultricies ut, tincidunt a neque. "
+          },
+          {
+            "tipo": 2,
+            "clave": "state",
+            "valor": "state"
+          },
+          {
+            "tipo": 4,
+            "clave": "Confounding factors",
+            "valor": "Ut nec cursus dui. Cras leo nulla, sollicitudin sed lacinia eu, vestibulum id eros. Etiam non metus eu turpis semper semper at in elit. Aenean quam ante, volutpat a dictum vitae, vulputate eu enim. Aliquam sollicitudin convallis mi, sit amet egestas quam luctus at. Nam non ante sed turpis sollicitudin dapibus. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Body position",
+            "valor": "Standing"
+          }
+        ],
+        [
+          {
+            "tipo": 1,
+            "clave": "Head circumference",
+            "valor": "Head circumference"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Any event",
+            "valor": "Morbi tristique aliquet ipsum a fermentum. Nunc auctor lorem tempor tellus luctus varius. Vivamus euismod malesuada sapien, ut gravida nisi. Integer velit augue, tincidunt et malesuada quis, vulputate vitae massa. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Birth",
+            "valor": "Mauris id mi tempor"
+          },
+          {
+            "tipo": 2,
+            "clave": "protocol",
+            "valor": "protocol"
+          },
+          {
+            "tipo": 4,
+            "clave": "Device",
+            "valor": " Sed a laoreet urna, vitae egestas urna. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Extension",
+            "valor": "Phasellus at felis scelerisque, tincidunt dolor at, lobortis leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Head circumference",
+            "valor": "Sed commodo neque lacinia dui lacinia, sed dictum arcu volutpat."
+          },
+          {
+            "tipo": 4,
+            "clave": "Comment",
+            "valor": "Curabitur leo purus, dignissim vitae justo ut, aliquet aliquet lorem. Nulla placerat rutrum vulputate. Nullam quis nibh vel augue cursus consectetur. Suspendisse at elementum est, sit amet aliquet magna. Nulla facilisi. Cras tristique, tortor at varius gravida, sem ante dictum urna, sodales efficitur nisi enim quis dui. Ut at justo eget enim vestibulum dignissim non nec urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+          },
+          {
+            "tipo": 2,
+            "clave": "state",
+            "valor": "state"
+          },
+          {
+            "tipo": 4,
+            "clave": "Confounding factors",
+            "valor": "Nam sed tellus rutrum, volutpat sem ut, mattis justo. Sed placerat malesuada tellus, ac aliquam neque hendrerit ac. Cras volutpat, odio ut rutrum sodales, tellus turpis eleifend erat, eu suscipit dolor felis ut ligula. Phasellus elementum mi lectus, semper volutpat neque fringilla quis. "
+          }
+        ]
+      ]
+    },
+    {
+      "nombre_sesion": "Presión Alta ",
+      "fecha": "09/07/2020",
+      "nombre_profesional": "Andres Zapata Torres",
+      "profesion": "Médico Internista",
+      "centro_salud": "Hospital San Jorge",
+      "arquetipos": [
+        [
+          {
+            "tipo": 1,
+            "clave": "Blood pressure",
+            "valor": "Blood pressure"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Any event",
+            "valor": "Etiam massa ante, finibus vel turpis ac, finibus elementum sapien. Donec lobortis nisl mauris, quis elementum orci pharetra in. In pulvinar ut ipsum vel interdum. Mauris nec cursus lorem. "
+          },
+          {
+            "tipo": 4,
+            "clave": "24 hour average",
+            "valor": "Nulla scelerisque lectus lacinia nunc vulputate accumsan. "
+          },
+          {
+            "tipo": 2,
+            "clave": "protocol",
+            "valor": "protocol"
+          },
+          {
+            "tipo": 4,
+            "clave": "Cuff size",
+            "valor": "Adult"
+          },
+          {
+            "tipo": 4,
+            "clave": "Location of measurement",
+            "valor": "Left wrist"
+          },
+          {
+            "tipo": 4,
+            "clave": "Structured measurement location",
+            "valor": "Phasellus mattis odio ultrices, varius ex eget, accumsan nunc. Sed tortor magna, aliquet tristique mi in, pharetra congue felis. Phasellus auctor ac sem congue accumsan. Integer in eros augue. Nam mollis mauris eget metus tincidunt tincidunt. Aliquam laoreet, felis vel accumsan auctor, justo enim euismod mi, at aliquam elit mi eu diam. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Method",
+            "valor": "Auscultation"
+          },
+          {
+            "tipo": 4,
+            "clave": "Mean arterial pressure formula",
+            "valor": "Curabitur tempus mauris id blandit maximus."
+          },
+          {
+            "tipo": 4,
+            "clave": "Systolic pressure formula",
+            "valor": "Aenean eget hendrerit ligula."
+          },
+          {
+            "tipo": 4,
+            "clave": "Diastolic pressure formula",
+            "valor": "Quisque vel pellentesque enim. Cras congue, turpis non tristique interdum, ligula ante scelerisque purus, eget gravida odio elit volutpat turpis. Sed euismod rutrum augue id euismod. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Diastolic endpoint",
+            "valor": "Phase IV"
+          },
+          {
+            "tipo": 4,
+            "clave": "Device",
+            "valor": "Class aptent taciti sociosqu ad litora."
+          },
+          {
+            "tipo": 4,
+            "clave": "Extension",
+            "valor": "Nunc nec tortor velit. Aenean at ligula a massa faucibus viverra. Aenean eget vulputate leo. "
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Systolic",
+            "valor": " Donec convallis cursus ullamcorper."
+          },
+          {
+            "tipo": 4,
+            "clave": "Diastolic",
+            "valor": "Proin vulputate lectus nec leo lobortis convallis."
+          },
+          {
+            "tipo": 4,
+            "clave": "Mean arterial pressure",
+            "valor": "Nulla facilisis rutrum orci. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Pulse pressure",
+            "valor": "Nunc eu risus dui. Vestibulum convallis sem et ornare scelerisque."
+          },
+          {
+            "tipo": 4,
+            "clave": "Clinical interpretation",
+            "valor": "Maecenas sagittis vitae ipsum semper egestas. Donec tempus tellus efficitur, eleifend ante quis, fermentum leo. Ut quis nisl sit amet nisl pellentesque suscipit id in turpis. Cras eget luctus ipsum. Duis non lobortis erat. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Comment",
+            "valor": "Proin quis nibh in eros euismod bibendum in in orci. Donec sed venenatis magna, vel porttitor nunc. Sed molestie, metus dapibus sagittis ullamcorper, justo ex vestibulum turpis, vel malesuada libero ligula vitae lorem. "
+          },
+          {
+            "tipo": 2,
+            "clave": "state",
+            "valor": "state"
+          },
+          {
+            "tipo": 4,
+            "clave": "Position",
+            "valor": "Sitting"
+          },
+          {
+            "tipo": 4,
+            "clave": "Confounding factors",
+            "valor": "Pellentesque efficitur, lorem a tincidunt scelerisque, enim arcu euismod tortor, vitae sollicitudin eros lectus sed est. Morbi lacinia neque ac porta tincidunt."
+          },
+          {
+            "tipo": 4,
+            "clave": "Exertion",
+            "valor": "Integer volutpat odio ac condimentum gravida. Suspendisse aliquam est id ipsum eleifend, in dignissim augue rhoncus. Sed gravida leo vel tellus pharetra imperdiet. Donec ac venenatis orci. Nulla pharetra laoreet augue. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Sleep status",
+            "valor": "Awake"
+          },
+          {
+            "tipo": 4,
+            "clave": "Tilt",
+            "valor": "Mauris eu nisl pharetra, fermentum risus sit amet, blandit mi. "
+          }
+        ]
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5f5669395ffcdf178a34b2ba"
+  },
+  "nombre": "Tomás",
+  "apellidos": "Riquelme Fernandez",
+  "rut": "24347181-8",
+  "direccion": "Esmeralda 1265",
+  "fecha_nacimiento": "2004-02-05",
+  "ciudad": "Coyhaique",
+  "profesionales_que_atendieron": [
+    45
+  ],
+  "sesiones_medica": [
+    {
+      "nombre_sesion": "Consumo de alcohol y cigarros",
+      "fecha": "09/07/2020",
+      "nombre_profesional": "Amelia Smith Ruiz ",
+      "profesion": "Médico Nefrólogo ",
+      "centro_salud": "Hospital San Jose",
+      "arquetipos": [
+        [
+          {
+            "tipo": 1,
+            "clave": "Alcohol consumption summary",
+            "valor": "Alcohol consumption summary"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall status",
+            "valor": "Current drinker"
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall description",
+            "valor": "Sed consequat neque tellus, id iaculis urna cursus quis. Integer quis ex et nisl accumsan rutrum. Vivamus interdum elit massa, id gravida neque pellentesque sit amet. Nullam vitae lacus nec velit interdum aliquam nec viverra turpis. Suspendisse eu pharetra justo. Quisque ligula turpis, sollicitudin ut neque vel, mollis venenatis dui. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Regular consumption commenced",
+            "valor": "8/0/2018"
+          },
+          {
+            "tipo": 4,
+            "clave": "Daily consumption commenced",
+            "valor": "7/1/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Date first intoxicated",
+            "valor": "25/7/2020"
+          },
+          {
+            "tipo": 3,
+            "clave": "Per episode",
+            "valor": "Per episode"
+          },
+          {
+            "tipo": 4,
+            "clave": "Status",
+            "valor": "Current drinker"
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode description",
+            "valor": " Maecenas nec est quis turpis finibus blandit sit amet non quam. Nulla velit leo, varius ac gravida id, mattis ut nulla. Nullam consectetur leo eu tempor viverra. Ut quis leo ut justo convallis vestibulum et vitae nulla. Mauris suscipit est vitae justo vestibulum congue. Aenean tortor tortor, vestibulum in condimentum ac, molestie at dui. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode label",
+            "valor": "Vivamus pharetra, massa eu rhoncus facilisis, metus dui laoreet lorem, ut placerat arcu ante non erat."
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode start date",
+            "valor": "4/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode end date",
+            "valor": "5/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Pattern",
+            "valor": "Daily"
+          },
+          {
+            "tipo": 4,
+            "clave": "Binge drinking frequency",
+            "valor": "Nulla maximus lacus velit, quis condimentum augue lobortis in. Duis sit amet consectetur arcu, ac porttitor neque. In dapibus odio nec imperdiet ultricies."
+          },
+          {
+            "tipo": 4,
+            "clave": "Binge drinking description",
+            "valor": "Nam blandit leo sapien. Quisque sem nisl, volutpat vitae semper mattis, tincidunt in velit. Mauris vitae nisl vitae velit vulputate molestie. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Alcohol free days",
+            "valor": "Yes"
+          },
+          {
+            "tipo": 4,
+            "clave": "Typical consumption (alcohol units)",
+            "valor": "Aliquam erat volutpat. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Per type",
+            "valor": "Quisque ut sodales ligula. Aenean vel sapien tempus, dapibus risus non, tempor leo. In rutrum porta velit, at lacinia quam facilisis id. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Number of quit attempts",
+            "valor": "Aenean semper turpis quis neque maximus iaculis. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Quit date",
+            "valor": "7/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode details",
+            "valor": " Aenean tellus ligula, mattis eget erat quis, volutpat consectetur quam. Nam justo ante, mollis a nisl et, feugiat faucibus metus. Nullam egestas ac tellus quis vehicula. Duis a justo a velit tempor tincidunt. Morbi venenatis mattis felis. Fusce suscipit dolor sed leo ornare, ac malesuada dolor elementum."
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode comment",
+            "valor": "Donec nec nulla cursus, tincidunt ipsum et, interdum quam. Mauris dapibus gravida velit, nec eleifend ligula semper at. Maecenas accumsan arcu eget ex lacinia, eget molestie velit feugiat. Fusce ultricies dapibus ipsum in iaculis. Nulla nec dolor lacus. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall details",
+            "valor": "Proin commodo fermentum odio eu convallis. Cras id tempus tellus. Maecenas non mattis sem. Nulla suscipit dolor eu auctor vehicula. Phasellus blandit eleifend tellus vel consectetur. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall quit date",
+            "valor": "7/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall comment",
+            "valor": "Quisque id ipsum ullamcorper, dapibus felis eu, malesuada erat. Etiam eget pharetra sapien. Phasellus et justo hendrerit, cursus lectus a, iaculis magna. "
+          },
+          {
+            "tipo": 2,
+            "clave": "protocol",
+            "valor": "protocol"
+          },
+          {
+            "tipo": 4,
+            "clave": "Extension",
+            "valor": "Sed a dapibus turpis, et imperdiet massa. Nulla ac volutpat odio. Curabitur non eros id libero interdum eleifend. Duis nec suscipit sapien. Fusce et mauris erat. Phasellus vel finibus metus, in placerat arcu."
+          },
+          {
+            "tipo": 4,
+            "clave": "Quit date definition",
+            "valor": "In commodo fringilla sodales. Aenean ac euismod eros, non porttitor lorem. Maecenas augue tellus, commodo a auctor vitae, placerat quis enim. Proin vehicula gravida luctus. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Quit attempt definition",
+            "valor": "Phasellus euismod nunc vitae dapibus suscipit. Nam ut lacinia magna, ac cursus felis. Donec tempus, magna sed bibendum eleifend, ante mi tincidunt lectus, sed consectetur ligula lorem non ipsum. Morbi venenatis nulla eget arcu mattis dapibus. In semper dictum lorem ut venenatis. Quisque ornare est ac ultrices interdum. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Current drinker definition",
+            "valor": " Nullam elit nunc, vestibulum id ipsum non, ullamcorper ornare ligula. Cras erat dui, gravida id tempor ut, tempor cursus eros. Mauris feugiat ligula vitae iaculis egestas."
+          },
+          {
+            "tipo": 4,
+            "clave": "Former drinker definition",
+            "valor": "Nulla bibendum quis diam id sollicitudin. Praesent fermentum libero at neque ultrices vulputate. Curabitur volutpat velit malesuada risus lobortis varius quis in neque. Sed et est mi. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Lifetime non-drinker definition",
+            "valor": "Nullam enim velit, iaculis sed nisl eget, aliquam viverra nulla. Curabitur pretium libero quam, in porta est sodales sit amet. Vivamus at accumsan ligula."
+          },
+          {
+            "tipo": 4,
+            "clave": "Alcohol unit definition (mass)",
+            "valor": "Fusce quis varius dolor. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Last updated",
+            "valor": "7/8/2020"
+          }
+        ],
+        [
+          {
+            "tipo": 1,
+            "clave": "Smokeless tobacco summary",
+            "valor": "Smokeless tobacco summary"
+          },
+          {
+            "tipo": 2,
+            "clave": "data",
+            "valor": "data"
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall status",
+            "valor": "Current user"
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall description",
+            "valor": "Sed bibendum mauris quis diam bibendum, et fermentum nisi viverra. Nulla sagittis, ante id hendrerit gravida, magna turpis tincidunt magna, id commodo lacus ante sit amet enim. Quisque suscipit auctor tortor, eu pretium magna. Fusce eu diam facilisis nisl pharetra vehicula. Quisque lacus ante, fermentum vitae rhoncus id, posuere ut dui. Mauris aliquet dui nec consectetur ornare. Praesent sollicitudin nisl id tortor laoreet pulvinar. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Regular use commenced",
+            "valor": "20/11/2019"
+          },
+          {
+            "tipo": 4,
+            "clave": "Daily use commenced",
+            "valor": "8/0/2020"
+          },
+          {
+            "tipo": 3,
+            "clave": "Per type",
+            "valor": "Per type"
+          },
+          {
+            "tipo": 4,
+            "clave": "Type",
+            "valor": "Cras porta porta diam, quis vehicula lectus rhoncus at. Nullam commodo pretium porta. Quisque dignissim elementum est, non ultrices est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam augue tellus, ullamcorper ut mauris in, eleifend sagittis elit. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Status",
+            "valor": "Former user"
+          },
+          {
+            "tipo": 4,
+            "clave": "Description",
+            "valor": "Vivamus viverra pretium ligula lacinia vehicula. Morbi sapien nisl, hendrerit at facilisis at, iaculis eget nisl. Fusce quis feugiat ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+          },
+          {
+            "tipo": 3,
+            "clave": "Per episode",
+            "valor": "Per episode"
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode label",
+            "valor": "Fusce ac arcu elementum, pulvinar purus consectetur, congue augue. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode start date",
+            "valor": "1/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode end date",
+            "valor": "3/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Pattern",
+            "valor": "Non-daily"
+          },
+          {
+            "tipo": 4,
+            "clave": "Typical use",
+            "valor": "Praesent placerat, sapien quis consectetur facilisis, nibh arcu pretium neque, ut vehicula orci massa a eros. Donec ac tellus a mauris vestibulum vulputate. Vivamus rutrum gravida urna, nec volutpat lorem. Phasellus non lorem id turpis tempor mattis. Phasellus blandit dictum lorem, ut tempor odio mattis nec."
+          },
+          {
+            "tipo": 4,
+            "clave": "Typical frequency",
+            "valor": "Ut nec nulla egestas, sagittis justo quis, convallis justo."
+          },
+          {
+            "tipo": 4,
+            "clave": "Number of quit attempts",
+            "valor": "Quisque non sem ultricies, ultrices eros non, vulputate metus. Sed tincidunt justo in libero suscipit, nec interdum elit sagittis."
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode details",
+            "valor": "Mauris vel leo in diam sagittis pharetra. Aenean ut nisl blandit, luctus quam in, malesuada velit. Etiam mi est, facilisis ut urna sed, pellentesque elementum neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Episode comment",
+            "valor": "Quisque faucibus neque ut neque posuere, eu placerat metus placerat. Morbi eleifend lobortis tellus vel feugiat. Nam egestas ante felis. Donec a risus eu mi rhoncus facilisis. Aliquam erat volutpat. Suspendisse varius nibh fringilla, interdum nisl sed, facilisis ipsum. Etiam ac molestie libero."
+          },
+          {
+            "tipo": 4,
+            "clave": "Quit date",
+            "valor": "5/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Type details",
+            "valor": "Phasellus tempus est lectus, eget consectetur erat volutpat sit amet. Nunc sed urna tristique, bibendum urna vel, iaculis enim. Sed non hendrerit augue. Nulla tincidunt ex sed leo varius, sit amet sagittis dui aliquam. Aliquam tincidunt egestas arcu vel pharetra. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Pack years",
+            "valor": "Suspendisse neque leo, finibus id aliquet non, iaculis ut diam. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Comment",
+            "valor": "Sed quis suscipit urna. Nullam a nunc sit amet sem consectetur ultrices. Vivamus pulvinar tellus orci, a scelerisque nibh interdum in. Aliquam sit amet enim eros. Nulla lacinia vehicula neque, sit amet hendrerit velit mattis ut. Fusce dignissim non erat ut mattis. Praesent elementum in neque a auctor."
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall details",
+            "valor": "Proin euismod sollicitudin metus sed vulputate. Suspendisse eu tempor nunc, et imperdiet odio. Pellentesque sollicitudin interdum est non mattis. Vestibulum id magna sit amet lectus auctor luctus nec ut ex. Morbi ultricies magna nec turpis mollis sodales. Duis vel sem elementum, vehicula est sit amet, auctor eros."
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall quit date",
+            "valor": "4/8/2020"
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall pack years",
+            "valor": "Nullam vulputate elit vitae auctor venenatis. Vestibulum nec tempor velit. Nunc feugiat metus magna, id egestas mauris condimentum sit amet."
+          },
+          {
+            "tipo": 4,
+            "clave": "Overall comment",
+            "valor": "Aenean et sollicitudin massa, ac euismod urna. Maecenas placerat faucibus massa vel tincidunt. Nam pharetra finibus neque, pharetra malesuada nulla pulvinar id. Etiam felis tellus, laoreet sit amet eleifend sit amet, eleifend at ante. "
+          },
+          {
+            "tipo": 2,
+            "clave": "protocol",
+            "valor": "protocol"
+          },
+          {
+            "tipo": 4,
+            "clave": "Extension",
+            "valor": "Phasellus venenatis in metus ac imperdiet. Nullam mattis nisi ut libero fermentum, euismod vestibulum mauris ornare. Etiam dapibus nec lacus eu scelerisque. Nam imperdiet lacus sed mollis commodo. Nulla eleifend orci lacus, quis mollis urna rhoncus sit amet. Aliquam eu tincidunt urna. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Quit date definition",
+            "valor": "Duis ultrices ipsum hendrerit, maximus tortor id, porta mauris. In erat turpis, aliquet id consequat id, tincidunt et nisl. Sed bibendum tristique augue eget ornare."
+          },
+          {
+            "tipo": 4,
+            "clave": "Quit attempt definition",
+            "valor": "Vivamus et enim diam. Nunc tempus, ipsum a fermentum fermentum, tellus enim consequat massa, id dignissim ligula eros et metus."
+          },
+          {
+            "tipo": 4,
+            "clave": "Current user definition",
+            "valor": "Mauris vel ultricies sapien, porttitor consequat velit. Morbi aliquam magna eget tellus cursus mattis. Donec non risus ipsum. Donec finibus ligula sed risus elementum, non tempor est aliquam. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Former user definition",
+            "valor": "Nullam purus turpis, condimentum ut dignissim ac, sollicitudin sed eros. Fusce scelerisque purus sed lacus sodales, et elementum tellus iaculis. Nulla ut neque imperdiet velit blandit elementum. Phasellus tincidunt sem hendrerit mauris vulputate varius. Donec varius magna ante. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Never used definition",
+            "valor": "Nullam risus orci, dignissim nec ultrices vitae, sagittis id justo. Phasellus consectetur orci in risus vestibulum, eleifend varius tortor imperdiet. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Pack definition",
+            "valor": "Nunc purus lacus, dapibus a bibendum eu, eleifend sit amet lacus. "
+          },
+          {
+            "tipo": 4,
+            "clave": "Last updated",
+            "valor": "7/8/2020"
+          }
+        ]
+      ]
+    }
+  ]
+}]

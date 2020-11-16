@@ -17,12 +17,12 @@ export const Exa = (props) => {
     reader.readAsText(file)
   })
 }, [])
-  const {getRootProps, getInputProps} = useDropzone({onDrop})
+  const {getRootProps, getInputProps} = useDropzone({onDrop,  accept: 'application/json'})
 
   return (
     <div id="Examinador" {...getRootProps()}>
     <input {...getInputProps()} />
-    <p>Drag 'n' drop some files here, or click to select files</p>
+    <p>Seleccionar archivos JSON o arrastra y suelta el archivo aqui</p>
     </div>
     
   )
