@@ -103,10 +103,6 @@ def TablaFrecuenciaDesdeArchivo(request):
         if(len(archivo)>0):
             dato = json.loads(archivo)
             res = estadistica.Mostrar(dato,parametro1,parametro2)
-            Aprobado=estadistica.Comparador(res,estadistica.TablaFrecuencia,parametro1,parametro2)
-            if(Aprobado==True):
-                with open("tabla.png", "rb") as image_file:
-                    image_data = base64.b64encode(image_file.read()).decode('utf-8')
-                return Response(image_data)
-            else:
-                return Response(False)
+            estadigrafos=estadistica.Comparador(res,estadistica.TablaFrecuencia,parametro1,parametro2)
+        return Response(estadigrafos)
+            

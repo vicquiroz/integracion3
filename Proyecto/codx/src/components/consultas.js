@@ -166,7 +166,7 @@ export function DesviacionEstandarDesdeArchivo(Estadigrafo,Archivo,Campos){
 }
 
 
-export function TablaFrecuenciasDesdeArchivo(SetTablaF,Archivo,Campos){
+export function TablaFrecuenciasDesdeArchivo(Estadigrafo,Archivo,Campos){
     let FullData=[Archivo,Campos]
     let config = {
         method: 'POST',
@@ -179,7 +179,7 @@ export function TablaFrecuenciasDesdeArchivo(SetTablaF,Archivo,Campos){
     axios(config)
         .then((response) => {
             if(response.data!==false){
-                SetTablaF(response.data)
+                Estadigrafo(response.data)
             }
             else{
                 alert("No se ha podido realizar la tabla")

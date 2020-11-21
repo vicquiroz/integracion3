@@ -72,12 +72,10 @@ def TablaFrecuencia(d):
             cortes.append(max(cortes)+C)
         for i in range(len(cortes)-1): 
             if(i==len(cortes)-2):
-                inter.append("[" + str(round(cortes[i],2)) + "," + str(round(cortes[i+1],2)) + "]")
+                inter.append("[" + str(round(cortes[i],2)) + ";" + str(round(cortes[i+1],2)) + "]")
             else:
-                inter.append("[" + str(round(cortes[i],2)) + "," + str(round(cortes[i+1],2)) + ")")
+                inter.append("[" + str(round(cortes[i],2)) + ";" + str(round(cortes[i+1],2)) + ")")
             marca.append(round(((cortes[i]+cortes[i+1])/2),2))
-        df = pd.DataFrame({"valor":inter})
-        df.insert(1,"MC",marca)
         aux = cortes.copy()
         aux[len(aux)-1] = cortes[len(cortes)-1]+1
         for i in range(len(d)):
@@ -90,10 +88,8 @@ def TablaFrecuencia(d):
             for j in range(len(valores)):
                 if valores[j]==i:
                     f[i] = f[i]+1
-        df.insert(2,"f",f)
         fr = f.copy()
         fr = list(map(lambda x: round(x / n, 2), fr))
-        df.insert(3,"fr",fr)
         for i in range(len(f)):
             if i == 0:
                 Fr[i] = Fr[i]+fr[i]
@@ -101,18 +97,9 @@ def TablaFrecuencia(d):
             else:
                 Fr[i] = round(Fr[i-1]+fr[i],2)
                 F[i] = F[i-1]+f[i]
-        df.insert(4,"F",F)
-        df.insert(5,"Fr",Fr)
-        fig, ax = plt.subplots(dpi=200)
-        fig.patch.set_visible(False)
-        ax.axis('off')
-        ax.table(cellText=df.values,colLabels=df.columns,cellLoc='center', loc='center')
-        fig.tight_layout()
-        plt.savefig("tabla.png", transparent=False)
-        plt.clf()
-        return True
+        return [["valor",inter],["MC",marca],["f",f],["fr",fr],["F",F],["Fr",Fr]]
     except:
-        return False
+        return ("ERROR - No se pueden ejecutar la funcion con los datos")
 
 def CalcularMedia(datos):
     return [["Media",stats.mean(datos)]]
@@ -137,7 +124,7 @@ def CalcularMediana(datos):
 
 def CalcularDesviacionE(datos):
     try:
-        DVP=stats.stdev(datos)
+        DVP=stats.pstdev(datos)
         DVM=stats.stdev(datos)
         return [["Desviación Estándar Poblacion",DVP],["Desviación Estándar Muestra",DVM]]
     except:

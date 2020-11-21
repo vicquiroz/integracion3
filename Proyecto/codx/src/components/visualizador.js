@@ -82,9 +82,18 @@ export const Vis = (props) => {
             for(let x in Titulo){
                 headers.push(<th>{Titulo[x]}</th>)
             }
+            let partes=[];
             let body=[];
+            let bodyF=[];
             for(let x in Valor){
-                body.push(<th>{Valor[x]}</th>)
+                partes[x]=Valor[x].toString().split(',');
+            }
+            for(let x in partes[0]){
+                body = []
+                for(let y in partes){
+                    body.push(<th>{partes[y][x]}</th>)
+                }
+                bodyF.push(<tr>{body}</tr>)
             }
             console.log(headers)
             return( <Table className="table">
@@ -94,9 +103,7 @@ export const Vis = (props) => {
                             </tr>
                         </thead>
                         <tbody className="table-secondary">
-                            <tr>
-                                {body}
-                            </tr>
+                            {bodyF}
                         </tbody>
                     </Table>)
         }
