@@ -3,6 +3,7 @@ import {Vis} from './components/visualizador'
 import {Exa} from './components/examinador'
 import {Sim} from './components/simplificado'
 import {Exp} from './components/exportar'
+import {Mos} from './components/mostrador'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap';
 import {
@@ -45,7 +46,8 @@ function App() {
     <hr />
     <Switch>
       <Route path="/">
-      <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp} est={estadigrafo} tf={tablaf}/>
+      <Vis env={archivo} setCampos={Cmp} />
+      <Mos setArchivo={Res} img={imagen}  est={estadigrafo} tf={tablaf}/>
       </Route>
     </Switch>
   </Router>  

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, NavItem, Button,Input } from 'reactstrap';
-import {ConseguirArchivo, PostDatos,TablaFrecuenciasDesdeArchivo, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
+import {ConseguirArchivo, GetDatos, PostDatos,TablaFrecuenciasDesdeArchivo, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
 import './comps.css';
 
 import {Menu,MenuItem } from '@szhsin/react-menu';
@@ -19,7 +19,11 @@ export const Sim = (props) => {
             </div>
           </div>
           <div className="btn-group btn-sm">
-            <Button color="success" onClick={()=>ConseguirArchivo(props,document.getElementById("ID").value)}>Consulta</Button>
+          <Menu className=" bg-info text-white border border-primary" menuButton={
+            <button className="btn btn-primary" >Consultas</button>}>
+              <MenuItem className=" bg-info" onClick={()=>GetDatos(props)}>Mostrar todo</MenuItem>
+              <MenuItem className="bg-info" onClick={()=>ConseguirArchivo(props,document.getElementById("ID").value)}>Consulta</MenuItem>
+          </Menu>              
             <Button color="info" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
           </div>
         </NavItem>

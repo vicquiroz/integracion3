@@ -1,4 +1,13 @@
 import axios from 'axios';
+function IsValidJSON(str){
+    try{
+        JSON.parse(str)
+    }
+    catch(event){
+        return false
+    }
+    return true
+}
 
 export function GetDatos(){
     let config = {
@@ -10,7 +19,8 @@ export function GetDatos(){
     };
     axios(config)
         .then(function (response) {
-            console.log(JSON.stringify(response.data));
+            let Data=response.data;
+            console.log(Data)
         })
         .catch(function (error) {
         console.log(error);
@@ -18,7 +28,7 @@ export function GetDatos(){
 }
 
 export function PostDatos(Archivo){
-    let data = JSON.stringify({"nombre":"Prueba","datoT":Archivo});
+    let data = JSON.stringify({"nombre":"Fichas Clinicas","datoT":Archivo});
     let config = {
         method: 'POST',
         url: 'http://localhost:8000/DB/',
@@ -36,15 +46,6 @@ export function PostDatos(Archivo){
         });
 }
 
-function IsValidJSON(str){
-    try{
-        JSON.parse(str)
-    }
-    catch(event){
-        return false
-    }
-    return true
-}
 
 export function ConseguirArchivo(props,ID){
     let config = {

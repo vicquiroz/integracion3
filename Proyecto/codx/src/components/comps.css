@@ -85,8 +85,7 @@
     background-color: #4bc9b0;
     font-weight: bold;
 }
-img {
+#graf {
     max-width: 100%;
-    height: auto;
-    width: auto/9; /* Bug de ie8 */
+    max-height: 70%;
 }
