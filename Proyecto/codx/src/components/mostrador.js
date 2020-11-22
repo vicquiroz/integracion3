@@ -37,7 +37,6 @@ export const Mos = (props) => {
                 }
                 bodyF.push(<tr>{body}</tr>)
             }
-            console.log(headers)
             return( <Table className="table">
                         <thead className="table-dark">
                             <tr>

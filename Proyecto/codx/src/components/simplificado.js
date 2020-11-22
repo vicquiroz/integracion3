@@ -1,30 +1,44 @@
-import React from 'react'
-import { Nav, NavItem, Button,Input } from 'reactstrap';
-import {ConseguirArchivo, GetDatos, PostDatos,TablaFrecuenciasDesdeArchivo, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
+import React/*,{useState}*/ from 'react'
+import { Nav, NavItem, Button,/*Input ,ButtonDropdown,DropdownToggle,DropdownMenu,DropdownItem*/} from 'reactstrap';
+import {ConseguirArchivo, /*ViewNombres,*/ PostDatos,TablaFrecuenciasDesdeArchivo, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
 import './comps.css';
 
 import {Menu,MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 
 export const Sim = (props) => {
+  /*const [dropdownOpen, setOpen] = useState(false);
+  const toggle = () => setOpen(!dropdownOpen);*/
+
+  /*const [Lista,setLista]=useState();
+  const Lst=(ListaRes)=>{
+    setLista(ListaRes)
+  }*/
   return (
     <div id="Simplificado">
-      
       <Nav>
         <p>Manejo BD</p>
         <NavItem>
-          <div className="input-group input-group-sm">
+          {/*<div className="input-group input-group-sm">
             <div className="col-auto">
               <Input type="text" className="form-control bg-dark border border-primary text-white" id="ID"></Input>
             </div>
-          </div>
+          </div>*/}
           <div className="btn-group btn-sm">
+            
           <Menu className=" bg-info text-white border border-primary" menuButton={
             <button className="btn btn-primary" >Consultas</button>}>
-              <MenuItem className=" bg-info" onClick={()=>GetDatos(props)}>Mostrar todo</MenuItem>
-              <MenuItem className="bg-info" onClick={()=>ConseguirArchivo(props,document.getElementById("ID").value)}>Consulta</MenuItem>
-          </Menu>              
-            <Button color="info" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
+              <MenuItem className="bg-info" onClick={()=>ConseguirArchivo(props,/*document.getElementById("ID").value*/ "3")}>Fichas Médicas</MenuItem>
+          </Menu>
+          <Button color="info" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
+            {/*
+            <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
+              <Button id="caret" color="primary" onClick={()=>ViewNombres(props,Lst,Lista)}>Cargar lista</Button>
+              <DropdownToggle split color="primary" />
+              <DropdownMenu >
+                <DropdownItem>Another Action</DropdownItem>
+              </DropdownMenu>
+            </ButtonDropdown> */}
           </div>
         </NavItem>
       <hr />
