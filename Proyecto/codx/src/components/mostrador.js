@@ -1,7 +1,8 @@
 import React,{Image} from 'react'
 import ReactJson from 'react-json-view'
-import './comps.css';
-import {Table} from 'reactstrap';
+import './comps.css'
+import {Table} from 'reactstrap'
+import AnyChart from 'anychart-react'
 export const Mos = (props) => {
     function Imagen(img){
         if(img!=null){
@@ -55,8 +56,6 @@ export const Mos = (props) => {
                 {Imagen(props.img)}
             </div>
             <div className="split right down">
-                {Imagen(props.tf)}
-                <br/>
                 {estadigrafo(props.est)}
             </div>
         </div>       

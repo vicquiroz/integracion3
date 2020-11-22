@@ -24,10 +24,6 @@ function App() {
   const Img=(imagenRes)=>{
     setImagen(imagenRes)
   }
-  const [tablaf,setTablaF]=useState();
-  const Tf=(imagenRes)=>{
-    setTablaF(imagenRes)
-  }
   const [campos,setCampos]=useState();
   const Cmp=(camposRes)=>{
     setCampos(camposRes)
@@ -40,14 +36,14 @@ function App() {
   return (
     <Router>
     <div className="container" path="/">
-      <Sim env={archivo} res={Res} setImagen={Img} camps={campos} setEstadigrafo={Est} setTablaF={Tf}/>
+      <Sim env={archivo} res={Res} setImagen={Img} camps={campos} setEstadigrafo={Est}/>
       <Exa res={Res}/>
     </div>
     <hr />
     <Switch>
       <Route path="/">
       <Vis env={archivo} setCampos={Cmp} />
-      <Mos setArchivo={Res} img={imagen}  est={estadigrafo} tf={tablaf}/>
+      <Mos setArchivo={Res} img={imagen}  est={estadigrafo}/>
       </Route>
     </Switch>
   </Router>  
