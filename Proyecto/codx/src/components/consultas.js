@@ -28,7 +28,7 @@ export function GetDatos(){
         console.log(error);
     });
 }
-{/*export function GetNombres(props,setLista){
+/*export function GetNombres(props,setLista){
     var Mens=[]
     let config = {
         method: 'GET',
@@ -52,7 +52,7 @@ export function GetDatos(){
 export function ViewNombres(props,setLista,Lista){
     GetNombres(props,setLista)
     console.log(Lista)
-}*/}
+}*/
 
 export function PostDatos(Archivo){
     let data = JSON.stringify({"nombre":"Fichas Clinicas","datoT":Archivo});
@@ -98,7 +98,7 @@ export function ConseguirArchivo(props,ID){
         });
 }
 
-export function GraficarDesdeArchivo(setImagen,Archivo,Campos){
+export function GraficarDesdeArchivo(setGrafico,Archivo,Campos){
     let FullData=[Archivo,Campos]
     let config = {
         method: 'POST',
@@ -110,7 +110,7 @@ export function GraficarDesdeArchivo(setImagen,Archivo,Campos){
     };
     axios(config)
         .then((response) => {
-            setImagen(response.data)
+            setGrafico(response.data)
         })
         .catch((error) => {
             console.log(error);

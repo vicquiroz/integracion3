@@ -2,12 +2,42 @@ import React,{Image} from 'react'
 import ReactJson from 'react-json-view'
 import './comps.css'
 import {Table} from 'reactstrap'
-import AnyChart from 'anychart-react'
+import CanvasJSReact from '../assets/canvasjs.react'
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 export const Mos = (props) => {
-    function Imagen(img){
-        if(img!=null){
+    function grafica(datos){
+        if(datos!=null){
+            var Titulo=[]
+            var Valor=[]
+            var DataPoints=[]
+            for(let x in datos){
+                let Campos=datos[x]  
+                Titulo.push(Campos[0])
+                Valor.push(Campos[1])
+            } 
+            let labs=[]
+            let val=[]
+            labs = Titulo[0]
+            val = Valor[0]
+            for(let x in labs){
+                DataPoints.push({label:labs[x],y:val[x]})
+            }
+            
+            const grafico = {
+                title: {
+                  text: "Grafico de cantidad"
+                },
+                axisY: {
+                    includeZero: true
+                },
+                data: [{				
+                          type: "column",
+                          dataPoints: DataPoints
+                          
+                 }]
+             }
             return(
-                <img src={`data:image/gif;base64,${img}`}  id="graf"/>
+                <CanvasJSChart options = {grafico}/>
             )
         }
     }
@@ -52,7 +82,11 @@ export const Mos = (props) => {
     return(
         <div id="Visualizador" className="scrollbar">
             <div className="split right">
-                {Imagen(props.img)}
+                <div >
+                    {grafica(props.datos)}
+                    
+                </div>
+                
             </div>
             <div className="split right down">
                 {estadigrafo(props.est)}

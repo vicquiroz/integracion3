@@ -35,15 +35,12 @@ def EstadisticaDesdeArchivo(request):
         archivo=parametro[0]
         parametro1=str(parametro[1][1])
         parametro2=str(parametro[1][0])
-        image_data=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
             res = estadistica.Mostrar(dato,parametro1,parametro2)
             nom,val = estadistica.Suma(res)
-            estadistica.Graficar(nom, val)
-            with open("grafico.png", "rb") as image_file:
-                image_data = base64.b64encode(image_file.read()).decode('utf-8')
-        return Response(image_data)
+            graf = [[nom,val]]
+        return Response(graf)
 
 @api_view(['POST'])
 def ModaDesdeArchivo(request):
