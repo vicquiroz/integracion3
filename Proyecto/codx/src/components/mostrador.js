@@ -1,5 +1,4 @@
-import React,{Image} from 'react'
-import ReactJson from 'react-json-view'
+import React from 'react'
 import './comps.css'
 import {Table} from 'reactstrap'
 import CanvasJSReact from '../assets/canvasjs.react'
@@ -30,6 +29,9 @@ export const Mos = (props) => {
                 axisY: {
                     includeZero: true
                 },
+                axisX:{
+                    labelFontSize: 10,
+                  },
                 data: [{				
                           type: "column",
                           dataPoints: DataPoints
@@ -47,8 +49,8 @@ export const Mos = (props) => {
             var Valor=[]
             for(let x in estf){
                 let Campos=estf[x]  
-                Titulo.push(String(Campos[0]))
-                Valor.push(String(Campos[1]))
+                Titulo.push(Campos[0])
+                Valor.push(Campos[1])
             }   
             let headers=[];
             for(let x in Titulo){
@@ -67,30 +69,27 @@ export const Mos = (props) => {
                 }
                 bodyF.push(<tr>{body}</tr>)
             }
-            return( <Table className="table">
-                        <thead className="table-dark">
+            return( <Table dark bordered size="xl" responsive>
+                        <thead className="bg-secondary">
                             <tr>
                                 {headers}
                             </tr>
                         </thead>
-                        <tbody className="table-secondary">
+                        <tbody className="bg-darker">
                             {bodyF}
                         </tbody>
                     </Table>)
         }
     }
     return(
-        <div id="Visualizador" className="scrollbar">
-            <div className="split right">
-                <div >
+        <div>
+                <div>
                     {grafica(props.datos)}
-                    
                 </div>
-                
-            </div>
-            <div className="split right down">
-                {estadigrafo(props.est)}
-            </div>
+            <br/>
+                <div>
+                    {estadigrafo(props.est)}
+                </div>
         </div>       
     )
 }

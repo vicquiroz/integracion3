@@ -18,16 +18,7 @@ def GetDatos(request,parametro):
         Resp=None
     if request.method=='GET':
         return Response({'Query':"Searching file with ID="+parametro,"file":Resp})
-'''
-@api_view(['GET','POST','DELETE'])
-def GetNombres(request):
-    Datos=datos1.objects.all()
-    Nombres=[]
-    for i in range(0,len(Datos)):
-        Nombres.append([Datos[i].nombre,Datos[i].id])
-    if request.method=='GET':
-        return Response(Nombres)
-'''
+
 @api_view(['POST'])
 def EstadisticaDesdeArchivo(request):
     if request.method=='POST':

@@ -4,7 +4,7 @@ import {Exa} from './components/examinador'
 import {Sim} from './components/simplificado'
 import {Mos} from './components/mostrador'
 import 'bootstrap/dist/css/bootstrap.css';
-
+import { Container, Row, Col } from 'reactstrap';
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,38 +33,27 @@ function App() {
   }
   
   return (
-    <Router>
-    <div className="container" path="/">
-      <Sim env={archivo} res={Res} setGrafico={Gra} camps={campos} setEstadigrafo={Est}/>
-      <Exa res={Res}/>
-    </div>
-    <hr />
-    <Switch>
-      <Route path="/">
-      <Vis env={archivo} setCampos={Cmp} />
-      <Mos setArchivo={Res} datos={datos}  est={estadigrafo}/>
-      </Route>
-    </Switch>
-  </Router>  
-    /**<Container>
+    <Container>
       <Row>
-        <Col>
-          <Vis env={archivo} setArchivo={Res} img={imagen} setCampos={Cmp} est={estadigrafo} tf={tablaf}/>
-        </Col>
-        <Col>
-          <Sim env={archivo} res={Res} setImagen={Img} camps={campos} setEstadigrafo={Est} setTablaF={Tf}/>
-        </Col>
-        <Col>
+        <Router>
+        <div path="/">
           <Exa res={Res}/>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={{ offset: 10 }}>
-          <Exp res={Res}/>
-        </Col>
-      </Row>
-    </Container>
-  ***/
+          <Sim env={archivo} res={Res} setGrafico={Gra} camps={campos} setEstadigrafo={Est}/> 
+        </div>
+        <hr />
+        <Switch>
+          <Route path="/">
+            <Col sm="6">
+              <Vis env={archivo} setCampos={Cmp} />
+            </Col>
+            <Col sm="6">
+          <Mos setArchivo={Res} datos={datos}  est={estadigrafo}/>
+          </Col>
+          </Route>
+        </Switch>
+      </Router>
+    </Row>
+  </Container>  
     );
 }
 

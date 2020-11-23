@@ -1,5 +1,3 @@
-/*import {DropdownItem } from 'reactstrap';
-import React from 'react'*/
 import axios from 'axios';
 function IsValidJSON(str){
     try{
@@ -28,31 +26,6 @@ export function GetDatos(){
         console.log(error);
     });
 }
-/*export function GetNombres(props,setLista){
-    var Mens=[]
-    let config = {
-        method: 'GET',
-        url: 'http://localhost:8000/ObtieneNombres/',
-        headers: { 
-            'Content-Type': 'application/json'
-        }
-    };
-    axios(config)
-        .then((response) => {
-            let Datos=response.data;
-            for(let x in Datos){
-                Mens.push(<DropdownItem onClick={()=>ConseguirArchivo(props,Datos[x][1])}>Datos[x][0]</DropdownItem>)
-            }
-            setLista(Mens)
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-}
-export function ViewNombres(props,setLista,Lista){
-    GetNombres(props,setLista)
-    console.log(Lista)
-}*/
 
 export function PostDatos(Archivo){
     let data = JSON.stringify({"nombre":"Fichas Clinicas","datoT":Archivo});
