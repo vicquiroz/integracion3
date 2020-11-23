@@ -1,4 +1,13 @@
 import axios from 'axios';
+function IsValidJSON(str){
+    try{
+        JSON.parse(str)
+    }
+    catch(event){
+        return false
+    }
+    return true
+}
 
 export function GetDatos(){
     let config = {
@@ -10,7 +19,8 @@ export function GetDatos(){
     };
     axios(config)
         .then(function (response) {
-            console.log(JSON.stringify(response.data));
+            let Data=response.data;
+            console.log(Data)
         })
         .catch(function (error) {
         console.log(error);
@@ -18,7 +28,7 @@ export function GetDatos(){
 }
 
 export function PostDatos(Archivo){
-    let data = JSON.stringify({"nombre":"Prueba","datoT":Archivo});
+    let data = JSON.stringify({"nombre":"Fichas Clinicas","datoT":Archivo});
     let config = {
         method: 'POST',
         url: 'http://localhost:8000/DB/',
@@ -36,15 +46,6 @@ export function PostDatos(Archivo){
         });
 }
 
-function IsValidJSON(str){
-    try{
-        JSON.parse(str)
-    }
-    catch(event){
-        return false
-    }
-    return true
-}
 
 export function ConseguirArchivo(props,ID){
     let config = {
@@ -70,7 +71,7 @@ export function ConseguirArchivo(props,ID){
         });
 }
 
-export function GraficarDesdeArchivo(setImagen,Archivo,Campos){
+export function GraficarDesdeArchivo(setGrafico,Archivo,Campos){
     let FullData=[Archivo,Campos]
     let config = {
         method: 'POST',
@@ -82,7 +83,7 @@ export function GraficarDesdeArchivo(setImagen,Archivo,Campos){
     };
     axios(config)
         .then((response) => {
-            setImagen(response.data)
+            setGrafico(response.data)
         })
         .catch((error) => {
             console.log(error);
@@ -166,7 +167,7 @@ export function DesviacionEstandarDesdeArchivo(Estadigrafo,Archivo,Campos){
 }
 
 
-export function TablaFrecuenciasDesdeArchivo(SetTablaF,Archivo,Campos){
+export function TablaFrecuenciasDesdeArchivo(Estadigrafo,Archivo,Campos){
     let FullData=[Archivo,Campos]
     let config = {
         method: 'POST',
@@ -179,7 +180,7 @@ export function TablaFrecuenciasDesdeArchivo(SetTablaF,Archivo,Campos){
     axios(config)
         .then((response) => {
             if(response.data!==false){
-                SetTablaF(response.data)
+                Estadigrafo(response.data)
             }
             else{
                 alert("No se ha podido realizar la tabla")

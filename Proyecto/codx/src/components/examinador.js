@@ -1,4 +1,4 @@
-import React, {useCallback,useState} from 'react'
+import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 import './comps.css';
 
@@ -24,7 +24,6 @@ export const Exa = (props) => {
     <input {...getInputProps()} />
     <p>Seleccionar archivos JSON o arrastra y suelta el archivo aqui</p>
     </div>
-    
   )
     
     
