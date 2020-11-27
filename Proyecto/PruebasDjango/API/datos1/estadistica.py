@@ -134,8 +134,8 @@ def Comparador(res,Funcion,parametro1,parametro2):
         else:
             nom,val = Suma(res)
             estadigrafos=Funcion(val)
-        if(type(res[0])==int):
-            estadigrafos=Funcion(res)
+    if(type(res[0])==int or type(res[0])==float):
+        estadigrafos=Funcion(res)
     return estadigrafos
 
 
