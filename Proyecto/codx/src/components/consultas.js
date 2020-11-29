@@ -207,7 +207,6 @@ export function GetNombres(props,setLista){
             var Mens=[]
             let Datos=response.data;
             for(let x in Datos){
-                console.log(Datos[x])
                 Mens.push(<DropdownItem onClick={()=>ConseguirArchivo(props,Datos[x][1])} key={x}>{Datos[x][0]}</DropdownItem>)
             }
             setLista(Mens)

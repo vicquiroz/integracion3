@@ -105,9 +105,9 @@ def TablaFrecuenciaDesdeArchivo(request):
 
 @api_view(['GET','POST','DELETE']) 
 def GetNombres(request): 
-    Datos=datos1.objects.all() 
-    Nombres=[] 
-    for i in range(0,len(Datos)): 
-        Nombres.append([Datos[i].nombre,Datos[i].id]) 
     if request.method=='GET': 
+        Datos=datos1.objects.values("id","nombre")
+        Nombres=[] 
+        for i in range(0,len(Datos)): 
+            Nombres.append([Datos[i]["nombre"],Datos[i]["id"]]) 
         return Response(Nombres) 
