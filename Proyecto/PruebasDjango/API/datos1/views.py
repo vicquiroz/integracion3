@@ -102,4 +102,12 @@ def TablaFrecuenciaDesdeArchivo(request):
             res = estadistica.Mostrar(dato,parametro1,parametro2)
             estadigrafos=estadistica.Comparador(res,estadistica.TablaFrecuencia,parametro1,parametro2)
         return Response(estadigrafos)
-            
+
+@api_view(['GET','POST','DELETE']) 
+def GetNombres(request): 
+    Datos=datos1.objects.all() 
+    Nombres=[] 
+    for i in range(0,len(Datos)): 
+        Nombres.append([Datos[i].nombre,Datos[i].id]) 
+    if request.method=='GET': 
+        return Response(Nombres) 

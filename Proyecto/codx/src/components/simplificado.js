@@ -1,11 +1,18 @@
-import React from 'react'
-import { Nav, NavItem, Button, NavbarText} from 'reactstrap';
-import {ConseguirArchivo, PostDatos,TablaFrecuenciasDesdeArchivo, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
+import React,{useState} from 'react'
+import { Nav, NavItem, Button, NavbarText,ButtonDropdown,DropdownItem,DropdownToggle,DropdownMenu} from 'reactstrap';
+import {ConseguirArchivo, PostDatos,TablaFrecuenciasDesdeArchivo,GetNombres, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
 import './comps.css';
 import {Menu,MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 
 export const Sim = (props) => {
+  const [dropdownOpen, setOpen] = useState(false);
+  const toggle = () => setOpen(!dropdownOpen);
+
+  const [Lista,setLista]=useState();
+  const Lst=(ListaRes)=>{
+    setLista(ListaRes)
+  }
   return (
     <div id="Simplificado">
       <Nav>
@@ -14,11 +21,21 @@ export const Sim = (props) => {
             <div className="btn-group btn-sm">
             <Menu className=" bg-info text-white border border-primary" menuButton={
               <button className="btn btn-primary" >Consultas</button>}>
-                <MenuItem className="bg-info" onClick={()=>ConseguirArchivo(props,"3")}>Fichas Médicas</MenuItem>
+                <MenuItem className="bg-info" onClick={()=>ConseguirArchivo(props,"1")}>Fichas Médicas</MenuItem>
             </Menu>
             <Button color="info" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
             </div>
+            <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
+              <Button id="caret" color="primary" onClick={()=>GetNombres(props,Lst)}>Cargar lista</Button>
+              <DropdownToggle split color="primary" />
+              <DropdownMenu>
+                <DropdownItem></DropdownItem>
+                {Lista}
+                <DropdownItem></DropdownItem>
+              </DropdownMenu>
+            </ButtonDropdown>
         </NavItem>
+        <br/>
       <NavItem>
         <NavbarText>Data Science  </NavbarText>
           <Menu className=" bg-info text-white border border-primary" menuButton={

@@ -1,4 +1,7 @@
+import React from 'react'
 import axios from 'axios';
+import {DropdownItem } from 'reactstrap';
+
 function IsValidJSON(str){
     try{
         JSON.parse(str)
@@ -185,6 +188,29 @@ export function TablaFrecuenciasDesdeArchivo(Estadigrafo,Archivo,Campos){
             else{
                 alert("No se ha podido realizar la tabla")
             }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+export function GetNombres(props,setLista){
+    let config = {
+        method: 'GET',
+        url: 'http://localhost:8000/ObtieneNombres/',
+        headers: { 
+            'Content-Type': 'application/json'
+        }
+    };
+    axios(config)
+        .then((response) => {
+            var Mens=[]
+            let Datos=response.data;
+            for(let x in Datos){
+                console.log(Datos[x])
+                Mens.push(<DropdownItem onClick={()=>ConseguirArchivo(props,Datos[x][1])} key={x}>{Datos[x][0]}</DropdownItem>)
+            }
+            setLista(Mens)
         })
         .catch((error) => {
             console.log(error);
