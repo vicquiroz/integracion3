@@ -19,12 +19,6 @@ export const Sim = (props) => {
         <NavItem>
           <NavbarText>Manejo BD</NavbarText>
             <div className="btn-group btn-sm">
-            <Menu className=" bg-info text-white border border-primary" menuButton={
-              <button className="btn btn-primary" >Consultas</button>}>
-                <MenuItem className="bg-info" onClick={()=>ConseguirArchivo(props,"1")}>Fichas Médicas</MenuItem>
-            </Menu>
-            <Button color="info" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
-            </div>
             <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
               <Button id="caret" color="primary" onClick={()=>GetNombres(props,Lst)}>Cargar lista</Button>
               <DropdownToggle split color="primary" />
@@ -34,10 +28,13 @@ export const Sim = (props) => {
                 <DropdownItem></DropdownItem>
               </DropdownMenu>
             </ButtonDropdown>
+            <Button color="info" onClick={()=>PostDatos(props.env)}>Actualizar</Button>
+            </div>
+            
         </NavItem>
         <br/>
       <NavItem>
-        <NavbarText>Data Science  </NavbarText>
+        <NavbarText>    Data Science  </NavbarText>
           <Menu className=" bg-info text-white border border-primary" menuButton={
             <button className="btn btn-primary btn-md" >Calcular de Estadigrafo</button>}>
               <MenuItem className=" bg-info" onClick={()=>MedianaDesdeArchivo(props.setEstadigrafo,props.env,props.camps)} >Mediana</MenuItem>

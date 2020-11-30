@@ -23,17 +23,20 @@ export const Mos = (props) => {
             }
             
             const grafico = {
+                animationEnabled:true,
+                theme:"dark2",
                 title: {
                   text: "Grafico de cantidad"
                 },
                 axisY: {
-                    includeZero: true
+                    includeZero: true,
                 },
                 axisX:{
+                    reversed:true,
                     labelFontSize: 10,
                   },
                 data: [{				
-                          type: "column",
+                          type: "bar",
                           dataPoints: DataPoints
                           
                  }]

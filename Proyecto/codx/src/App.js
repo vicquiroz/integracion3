@@ -3,6 +3,8 @@ import {Vis} from './components/visualizador'
 import {Exa} from './components/examinador'
 import {Sim} from './components/simplificado'
 import {Mos} from './components/mostrador'
+import Home from './paginas/home'
+import Navbar from './components/BarraLateral/Navbar'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap';
 import {
@@ -33,27 +35,31 @@ function App() {
   }
   
   return (
-    <Container>
-      <Row>
-        <Router>
-        <div path="/">
-          <Exa res={Res}/>
-          <Sim env={archivo} res={Res} setGrafico={Gra} camps={campos} setEstadigrafo={Est}/> 
-        </div>
-        <hr />
+    <Router>
+      <Navbar />
+      <Container>
         <Switch>
-          <Route path="/">
-            <Col sm="6">
-              <Vis env={archivo} setCampos={Cmp} />
-            </Col>
-            <Col sm="6">
-          <Mos setArchivo={Res} datos={datos}  est={estadigrafo}/>
-          </Col>
+        <Row>
+          <Route path='/'>
+          <Route path='/' exact component={Home} />
           </Route>
-        </Switch>
-      </Router>
-    </Row>
-  </Container>  
+          <Route path="/modogeneral">
+          <div path="/">
+            <Exa res={Res}/>
+            <Sim env={archivo} res={Res} setGrafico={Gra} camps={campos} setEstadigrafo={Est}/> 
+          </div>
+          <hr />
+              <Col sm="6">
+                <Vis env={archivo} setCampos={Cmp} />
+              </Col>
+              <Col sm="6">
+            <Mos setArchivo={Res} datos={datos}  est={estadigrafo}/>
+            </Col>
+          </Route>
+        </Row>
+      </Switch>
+    </Container>
+  </Router>
     );
 }
 
