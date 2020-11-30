@@ -46,31 +46,36 @@ def suma(val):
             cont.append(1) #se agrega un 1 al contador 
 
     return nombres, cont
-        
+
+with open('prueba.json', encoding='utf-8') as file: #abrir imagen con utf-8 para mayor comprension
+    fichas = json.load(file) #guardamos el contenido del json en data
+    #print(fichas[1])
+
+
+consulta = "Left eye"
+ses = "sesiones_medica"
+arq = "arquetipos"
+cont = 0
+
+guar = []
+pos = []
+for i in range(len(fichas)):
+    for j in range(len(fichas[i][ses])):
+        for k in range(len(fichas[i][ses][j][arq])):
+            for l in range(len(fichas[i][ses][j][arq][k])):
+                #print(fichas[i][ses][j][arq][k][l]["clave"])
+                if consulta == fichas[i][ses][j][arq][k][l]["valor"]:
+                    guar.append(str(fichas[i]["nombre"])+" "+str(fichas[i]["apellidos"]))
+                    pos.append(j)
+                else:
+                    cont = cont+1
+print(guar)
+print(pos)
+#print(cont)
+
+
+
     
-def graficar(ejex, ejey):
-    ancho= 0.5 #ancho para el grafico de barras
-    plt.bar(ejex, ejey, ancho) #se pasan los datos para completar 
-    plt.savefig('grafico.png', transparent=False)#se exporta el grafico en png
-    plt.show()
-
-def tabla(dato):
-    fig, ax = plt.subplots(dpi=500)
-    fig.patch.set_visible(False)
-    ax.axis('off')
-    d = dato[0]
-    del d['profesionales_que_atendieron']
-    del d['sesiones_medica']
-    print(d)
-    df = pd.DataFrame(data=d)
-    print(df)
-    ax.table(cellText=df.values, rowLabels=["valor"],colLabels=df.columns,cellLoc='center', loc='center')
-    fig.tight_layout()
-    plt.show()
-
-with open('His_clin.json', encoding='utf-8') as file: #abrir imagen con utf-8 para mayor comprension
-    dato = json.load(file) #guardamos el contenido del json en data
-    print(dato)
     #print(data[0]['sesiones_medica'][0]['nombre_sesion'])
 
 
