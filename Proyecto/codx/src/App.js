@@ -37,8 +37,9 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <Switch>
       <Container>
-        <Switch>
+
         <Row>
           <Route path='/'>
           <Route path='/' exact component={Home} />
@@ -57,8 +58,11 @@ function App() {
             </Col>
           </Route>
         </Row>
-      </Switch>
     </Container>
+    <Route path="/arquetipos">
+    <Sim setGrafico={Gra}/>
+    </Route>
+    </Switch>
   </Router>
     );
 }

@@ -25,6 +25,7 @@ export const Mos = (props) => {
             const grafico = {
                 animationEnabled:true,
                 theme:"dark2",
+                zoomEnabled: true,
                 title: {
                   text: "Grafico de cantidad"
                 },

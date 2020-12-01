@@ -14,5 +14,11 @@ export const SidebarData = [
     path: '/modogeneral',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
+  },
+  {
+    title: 'Manejo Arquetipos',
+    path: '/arquetipos',
+    icon: <IoIcons.IoIosPaper />,
+    cName: 'nav-text'
   }
 ];
