@@ -42,7 +42,7 @@ function App() {
   }
   const [consulta,setConsulta]=useState();
   const Con=(consultaRes)=>{
-    setCampos(consultaRes)
+    setConsulta(consultaRes)
   }
   const [estadigrafo,setEstadigrafo]=useState();
   const Est=(estadigrafoRes)=>{
