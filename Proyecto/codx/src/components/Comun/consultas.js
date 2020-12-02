@@ -50,7 +50,7 @@ export function PostDatos(Archivo){
 }
 
 
-export function ConseguirArchivo(props,ID){
+export function ConseguirArchivo(set,ID){
     let config = {
         method: 'GET',
         url: 'http://localhost:8000/ObtieneArchivo/'+String(ID),
@@ -62,11 +62,11 @@ export function ConseguirArchivo(props,ID){
         .then((response) => {
             let Data=response.data;
             if(IsValidJSON(Data.file)===true){
-                props.res(Data.file)
+                set(Data.file)
             }
             else{
                 alert("El archivo no es válido")
-                props.res(null)
+                set(null)
             }
         })
         .catch((error) => {
@@ -194,7 +194,7 @@ export function TablaFrecuenciasDesdeArchivo(Estadigrafo,Archivo,Campos){
         });
 }
 
-export function GetNombres(props,setLista){
+export function GetNombres(set,setLista){
     let config = {
         method: 'GET',
         url: 'http://localhost:8000/ObtieneNombres/',
@@ -207,9 +207,29 @@ export function GetNombres(props,setLista){
             var Mens=[]
             let Datos=response.data;
             for(let x in Datos){
-                Mens.push(<DropdownItem onClick={()=>ConseguirArchivo(props,Datos[x][1])} key={x}>{Datos[x][0]}</DropdownItem>)
+                Mens.push(<DropdownItem onClick={()=>ConseguirArchivo(set,Datos[x][1])} key={x}>{Datos[x][0]}</DropdownItem>)
             }
             setLista(Mens)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+
+export function GraficarDesdeArquetipo(setGrafico,Archivo,Consulta){
+    let FullData=[Archivo,Consulta]
+    let config = {
+        method: 'POST',
+        url: 'http://localhost:8000/graficaArquetipo/',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data:FullData
+    };
+    axios(config)
+        .then((response) => {
+            setGrafico(response.data)
         })
         .catch((error) => {
             console.log(error);

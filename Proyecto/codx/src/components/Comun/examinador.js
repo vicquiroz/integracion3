@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
-import './comps.css';
+import '../comps.css';
 
 export const Exa = (props) => {
   const onDrop = useCallback((acceptedFiles) => {

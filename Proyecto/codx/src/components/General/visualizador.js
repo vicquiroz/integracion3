@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactJson from 'react-json-view'
-import './comps.css';
+import '../comps.css';
 export const Vis = (props) => {
     var Seleccionados=[];
     /*function onEdit(fields){

@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Nav, NavItem, Button, NavbarText,ButtonDropdown,DropdownItem,DropdownToggle,DropdownMenu} from 'reactstrap';
-import {ConseguirArchivo, PostDatos,TablaFrecuenciasDesdeArchivo,GetNombres, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from './consultas';
-import './comps.css';
+import {ConseguirArchivo, PostDatos,TablaFrecuenciasDesdeArchivo,GetNombres, GraficarDesdeArchivo, MedianaDesdeArchivo,MediaDesdeArchivo, ModaDesdeArchivo, DesviacionEstandarDesdeArchivo} from '../Comun/consultas';
+import '../comps.css';
 import {Menu,MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 
@@ -20,7 +20,7 @@ export const Sim = (props) => {
           <NavbarText>Manejo BD</NavbarText>
             <div className="btn-group btn-sm">
             <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-              <Button id="caret" color="primary" onClick={()=>GetNombres(props,Lst)}>Cargar lista</Button>
+              <Button id="caret" color="primary" onClick={()=>GetNombres(props.res,Lst)}>Cargar lista</Button>
               <DropdownToggle split color="primary" />
               <DropdownMenu>
                 <DropdownItem></DropdownItem>

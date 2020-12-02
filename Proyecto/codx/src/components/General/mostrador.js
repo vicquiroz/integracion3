@@ -1,7 +1,7 @@
 import React from 'react'
-import './comps.css'
+import '../comps.css'
 import {Table} from 'reactstrap'
-import CanvasJSReact from '../assets/canvasjs.react'
+import CanvasJSReact from '../../assets/canvasjs.react'
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 export const Mos = (props) => {
     function grafica(datos){

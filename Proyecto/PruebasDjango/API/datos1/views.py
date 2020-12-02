@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from django.db import models
 from datos1.models import datos1
 from . import estadistica
+from . import arquetipos
 import json
 import base64
 
@@ -110,4 +111,17 @@ def GetNombres(request):
         Nombres=[] 
         for i in range(0,len(Datos)): 
             Nombres.append([Datos[i]["nombre"],Datos[i]["id"]]) 
-        return Response(Nombres) 
+        return Response(Nombres)
+
+@api_view(['POST'])
+def GraficaArq(request):
+    if request.method=='POST':
+        parametro=request.data
+        archivo=parametro[0]
+        consulta = parametro[1]
+        if(len(archivo)>0):
+            dato = json.loads(archivo)
+            nom,ape,rut,pos,con = arquetipos.consigue(dato,consulta)
+            nom,val = arquetipos.suma(nom,ape,rut,pos,con)
+            graf = [[nom,val]]
+        return Response(graf)
