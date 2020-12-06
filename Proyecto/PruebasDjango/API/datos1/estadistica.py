@@ -82,13 +82,13 @@ def TablaFrecuencia(d):
                 if valores[j]==i:
                     f[i] = f[i]+1
         fr = f.copy()
-        fr = list(map(lambda x: round(x / n, 2), fr))
+        fr = list(map(lambda x: round(x / n,5), fr))
         for i in range(len(f)):
             if i == 0:
                 Fr[i] = Fr[i]+fr[i]
                 F[i] = F[i]+f[i]
             else:
-                Fr[i] = round(Fr[i-1]+fr[i],2)
+                Fr[i] = round(Fr[i-1]+fr[i],5)
                 F[i] = F[i-1]+f[i]
         return [["valor",inter],["MC",marca],["f",f],["fr",fr],["F",F],["Fr",Fr]]
     except:

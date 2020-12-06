@@ -235,3 +235,27 @@ export function GraficarDesdeArquetipo(setGrafico,Archivo,Consulta){
             console.log(error);
         });
 }
+
+export function TablaFrecuenciasArq(EstadigrafoArq,Archivo,Consulta){
+    let FullData=[Archivo,Consulta]
+    let config = {
+        method: 'POST',
+        url: 'http://localhost:8000/tablaFArq/',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data:FullData
+    };
+    axios(config)
+        .then((response) => {
+            if(response.data!==false){
+                EstadigrafoArq(response.data)
+            }
+            else{
+                alert("No se ha podido realizar la tabla")
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}

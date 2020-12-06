@@ -121,7 +121,23 @@ def GraficaArq(request):
         consulta = parametro[1]
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            nom,ape,rut,pos,con = arquetipos.consigue(dato,consulta)
+            nom,ape,rut,pos,con = arquetipos.consigue(dato,consulta,1)
             nom,val = arquetipos.suma(nom,ape,rut,pos,con)
             graf = [[nom,val]]
         return Response(graf)
+
+@api_view(['POST'])
+def TablaFrecuenciaArq(request):
+    if request.method=='POST':
+        edad = []
+        parametro=request.data
+        archivo=parametro[0]
+        consulta = parametro[1]
+        estadigrafos=None
+        if(len(archivo)>0):
+            dato = json.loads(archivo)
+            _,_,_,_,_,ed = arquetipos.consigue(dato,consulta,2)
+            for i in range(len(ed)):
+                edad.append(estadistica.Edad(ed[i]))
+            estadigrafos=estadistica.TablaFrecuencia(edad)
+        return Response(estadigrafos)

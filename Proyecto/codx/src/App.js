@@ -48,6 +48,10 @@ function App() {
   const Est=(estadigrafoRes)=>{
     setEstadigrafo(estadigrafoRes)
   }
+  const [estadigrafoArq,setEstadigrafoArq]=useState();
+  const EstArq=(estadigrafoArqRes)=>{
+    setEstadigrafoArq(estadigrafoArqRes)
+  }
   
   return (
     <Router>
@@ -69,19 +73,19 @@ function App() {
                 <Vis env={archivo} setCampos={Cmp} />
               </Col>
               <Col sm="6">
-            <Mos setArchivo={Res} datos={datos}  est={estadigrafo}/>
+            <Mos datos={datos}  est={estadigrafo}/>
             </Col>
           </Route>
           <Route path="/arquetipos">
             <div>
-              <SimArq envArq={archivoArq} resArq={ResArq} setGraficoArq={GraArq} con={consulta}/>
+              <SimArq envArq={archivoArq} resArq={ResArq} setGraficoArq={GraArq} con={consulta} setEstadigrafoArq={EstArq}/>
             </div>
             <hr/>
             <Col sm="6">
               <VisArq envArq={archivoArq}/>
             </Col>
             <Col sm="6">
-              <MosArq datosArq={datosArq}/>
+              <MosArq datosArq={datosArq} estArq={estadigrafoArq}/>
             </Col>
           </Route>
         </Row>

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Nav, NavItem, Button, NavbarText,ButtonDropdown,DropdownItem,DropdownToggle,DropdownMenu,Input} from 'reactstrap';
-import {PostDatos,GetNombres,GraficarDesdeArquetipo} from '../Comun/consultas';
+import {PostDatos,GetNombres,GraficarDesdeArquetipo,TablaFrecuenciasArq} from '../Comun/consultas';
 import '../comps.css';
 import {Menu,MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
@@ -37,9 +37,17 @@ export const SimArq = (props) => {
           <NavbarText>    Data Science  </NavbarText>
             
             <Button color="info" className="btn btn-primary btn-md" onClick={()=>GraficarDesdeArquetipo(props.setGraficoArq,props.envArq,document.getElementById("buscador").value)}>Buscar coincidencia</Button>
-            <Input id="buscador"></Input>
+            
+            
 
           </NavItem>
+          <NavItem>
+            <Input id="buscador"></Input>
+          </NavItem>
+          <NavItem>
+            <Button color="info" className="btn btn-primary btn-md" onClick={()=>TablaFrecuenciasArq(props.setEstadigrafoArq,props.envArq,document.getElementById("buscador").value)}>Tabla de frecuencias de edad</Button>
+          </NavItem>
+          
         </Nav>
       </div>
     );

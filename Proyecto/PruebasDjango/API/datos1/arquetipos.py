@@ -2,12 +2,7 @@ import json
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-def edad(dato):
-    fecha = dato.split("-")
-    fechaStr = fecha[2]+"-"+fecha[1]+"-"+fecha[0]
-    fecha_nacimiento = datetime.strptime(fechaStr, "%d-%m-%Y")
-    edad = relativedelta(datetime.now(), fecha_nacimiento)
-    return edad.years
+
 
 def suma(n,a,r,p,c):
     cont = [] #arreglo que contiene la cantidas de veces repetido el nombre
@@ -40,7 +35,7 @@ def suma(n,a,r,p,c):
 
     return nombresFin, cont
 
-def consigue(fichas,consulta):
+def consigue(fichas,consulta,pet):
     ses = "sesiones_medica"
     arq = "arquetipos"
     nom = []
@@ -48,16 +43,24 @@ def consigue(fichas,consulta):
     rut = []
     pos = []
     con = []
-    arque = []
+    edad = []
     for i in range(len(fichas)):
         for j in range(len(fichas[i][ses])):
             for k in range(len(fichas[i][ses][j][arq])):
                 for l in range(len(fichas[i][ses][j][arq][k])):
                     #print(fichas[i][ses][j][arq][k][l]["clave"])
                     if consulta == fichas[i][ses][j][arq][k][l]["valor"]:
-                        nom.append(fichas[i]["nombre"])
-                        ape.append(fichas[i]["apellidos"])
-                        rut.append(fichas[i]["rut"])
-                        pos.append(i)
-                        con.append(j)
-    return nom,ape,rut,pos,con
+                        if pet == 1:
+                            nom.append(fichas[i]["nombre"])
+                            ape.append(fichas[i]["apellidos"])
+                            rut.append(fichas[i]["rut"])
+                            pos.append(i)
+                            con.append(j)
+                        if pet == 2:
+                            edad.append(fichas[i]["fecha_nacimiento"])
+
+    return nom,ape,rut,pos,con,edad
+
+
+
+    
