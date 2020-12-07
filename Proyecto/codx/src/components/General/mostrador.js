@@ -58,6 +58,7 @@ export const Mos = (props) => {
                 }],      
 
              }
+
              const options = {
                 
                 title: { text: "Grafico de Cantidad", display: true ,fontColor: "white",},
@@ -66,7 +67,7 @@ export const Mos = (props) => {
                             display: false
                          },
                          tooltips: {
-                            enabled: false
+                            enabled: true
                          },
                
                 
