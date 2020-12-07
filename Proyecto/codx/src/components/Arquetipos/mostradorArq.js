@@ -25,7 +25,7 @@ export const MosArq = (props) => {
             console.log(datos)
             var Titulo=[]
             var Valor=[]
-            var DataPoints=[]
+            
             for(let x in datos){
                 let Campos=datos[x]  
                 Titulo.push(Campos[0])
@@ -33,80 +33,91 @@ export const MosArq = (props) => {
             } 
             let labs=[]
             let val=[]
-            let labels1=[]
+            let labels=[]
+            let valores=[]
             labs = Titulo[0]
             val = Valor[0]
             for(let x in labs){
-                DataPoints.push(labs[x])
-                labels1.push(val[x])
+                labels.push(labs[x])
+                valores.push(val[x])
             }
-            console.log(labels1)
-            console.log(DataPoints)
-            
-            const data = {
                 
-                labels:DataPoints,
+
+            const data = {
+
+                labels:labels,
+            
                 datasets:[{
                     
                     //label: "Grafico",
-                    data:labels1,
-                    backgroundColor: getRandomColors(labels1.length), 
-                    
+                    data:valores,
+                    backgroundColor: getRandomColors(labels.length), 
                     responsive: true,
-                    title: { text: "THICCNESS SCALE", display: true },
                     
-                    scales: {
-                        yAxes: [
-                          {
-                            ticks: {
-                              autoSkip: true,
-                              maxTicksLimit: 10,
-                              beginAtZero: true,
-                            },
-                            gridLines: {
-                              display: false,
-                            },
-                          },
-                        ],
-                        xAxes: [
-                          {
-                            gridLines: {
-                              display: false,
-                            },
-                          },
-                        ],
-                      },
-                      pan: {
-                        enabled: true,
-                        mode: "xy",
-                        speed: 1,
-                        threshold: 1,
-                      },
-                      zoom: {
-                        enabled: true,
-                        drag: false,
-                        mode: "xy",
-                        limits: {
-                          max: 1,
-                          min: 0.5,
-                        },
-                        rangeMin: {
-                            x: 2,
-                            y: 1,
-                          },
-                          rangeMax: {
-                            x: 10,
-                            y: 150,
-                          }
-                          ,
-                      },
-            
-                }]
-                
-                
+
+                }],      
+
              }
-            return(
-                <HorizontalBar data={data}/>
+             const options = {
+                
+                title: { text: "Grafico de Cantidad", display: true ,fontColor: "white",},
+                
+                        legend: {
+                            display: false
+                         },
+                         tooltips: {
+                            enabled: false
+                         },
+               
+                
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "white",
+                            fontSize: 10,
+                            stepSize: 0.5   ,
+                            beginAtZero: true
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            fontColor: "white",
+                            fontSize: 10,
+                            stepSize: 0.5,
+                            beginAtZero: true
+                        }
+                    }]
+                },
+
+                pan: {
+                  enabled: true,
+                  mode: "xy",
+                  speed: 100,
+                  
+                },
+
+                zoom: {
+                  enabled: true,
+                  drag: false,
+                  mode: "xy",
+                  
+                  rangeMin: {
+                    x: 0,
+                    y: 0,
+                  },
+
+                  rangeMax: {
+                    x: 10,
+                    y: 150,
+                  }
+                  
+                }
+              }
+
+            return( 
+            
+                <HorizontalBar  width={200} height={200} options={options} data={data}/>
+            
             )
         }
     }
