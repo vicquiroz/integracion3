@@ -259,3 +259,25 @@ export function TablaFrecuenciasArq(EstadigrafoArq,Archivo,Consulta){
             console.log(error);
         });
 }
+
+export function ConseguirContenidosArq(setListado){
+    let config = {
+        method: 'GET',
+        url: 'http://localhost:8000/contenidosArq/',
+        headers: { 
+            'Content-Type': 'application/json'
+        }
+    };
+    axios(config)
+        .then((response) => {
+            if(response.data!==false){
+                setListado(response.data)
+            }
+            else{
+                alert("No se ha podido conseguir los Arquetipos")
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}

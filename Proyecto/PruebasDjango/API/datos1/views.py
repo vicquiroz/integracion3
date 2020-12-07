@@ -141,3 +141,15 @@ def TablaFrecuenciaArq(request):
                 edad.append(estadistica.Edad(ed[i]))
             estadigrafos=estadistica.TablaFrecuencia(edad)
         return Response(estadigrafos)
+
+@api_view(['GET'])
+def ContenidosArq(request):
+    if request.method=='GET':
+        Datos=datos1.objects.filter(nombre="Arquetipos")
+        if(len(Datos)>0):
+            Resp=Datos[0].datoT
+            Contenidos=arquetipos.conseguirContenidos(Resp)
+            return Response(Contenidos)
+        else:
+            return Response(False)
+            

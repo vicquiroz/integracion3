@@ -52,13 +52,15 @@ function App() {
   const EstArq=(estadigrafoArqRes)=>{
     setEstadigrafoArq(estadigrafoArqRes)
   }
-  
+  const [listado,setListado]=useState();
+  const Lst=(listadoRes)=>{
+    setListado(listadoRes)
+  }
   return (
     <Router>
       <Navbar />
       <Switch>
       <Container>
-
         <Row>
           <Route path='/'>
           <Route path='/' exact component={Home} />
@@ -78,14 +80,14 @@ function App() {
           </Route>
           <Route path="/arquetipos">
             <div>
-              <SimArq envArq={archivoArq} resArq={ResArq} setGraficoArq={GraArq} con={consulta} setEstadigrafoArq={EstArq}/>
+              <SimArq envArq={archivoArq} setListado={Lst} resArq={ResArq} setGraficoArq={GraArq} con={consulta} setEstadigrafoArq={EstArq}/>
             </div>
             <hr/>
             <Col sm="6">
               <VisArq envArq={archivoArq}/>
             </Col>
             <Col sm="6">
-              <MosArq datosArq={datosArq} estArq={estadigrafoArq}/>
+              <MosArq datosArq={datosArq} estArq={estadigrafoArq} listado={listado}/>
             </Col>
           </Route>
         </Row>

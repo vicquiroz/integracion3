@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Nav, NavItem, Button, NavbarText,ButtonDropdown,DropdownItem,DropdownToggle,DropdownMenu,Input} from 'reactstrap';
-import {PostDatos,GetNombres,GraficarDesdeArquetipo,TablaFrecuenciasArq} from '../Comun/consultas';
+import {PostDatos,GetNombres,GraficarDesdeArquetipo,TablaFrecuenciasArq,ConseguirContenidosArq} from '../Comun/consultas';
 import '../comps.css';
 import {Menu,MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
@@ -29,6 +29,7 @@ export const SimArq = (props) => {
                 </DropdownMenu>
               </ButtonDropdown>
               <Button color="info" onClick={()=>PostDatos(props.envArq)}>Actualizar</Button>
+              <Button color="danger" onClick={()=>ConseguirContenidosArq(props.setListado)}>Prueba Listado Arquetipos</Button>
               </div>
               
           </NavItem>

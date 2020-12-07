@@ -2,8 +2,6 @@ import json
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-
-
 def suma(n,a,r,p,c):
     cont = [] #arreglo que contiene la cantidas de veces repetido el nombre
     rut = []
@@ -17,7 +15,6 @@ def suma(n,a,r,p,c):
         resRut = rut #comparador de nombres
         resCont = cont #comparador de cantidad
         for j in range(len(rut)):
-    
             if rut[j] == r[i]: #si detecta que almacenado en nombre existe una variable igual a la de los datos
                 cont[j] = cont[j]+1 #le suma 1 a su contador correspondiente
                 resCont = None #se reinicia el comparador
@@ -25,7 +22,6 @@ def suma(n,a,r,p,c):
                 if i != 0:
                     if con[pos] != str(c[i]):
                         nombresFin[pos] = nombresFin[pos]+","+str(c[i])
-
         if resRut == rut and resCont == cont: #si las variables y sus comparadores coinciden
             con.append(str(c[i]))
             pos = pos + 1
@@ -58,9 +54,29 @@ def consigue(fichas,consulta,pet):
                             con.append(j)
                         if pet == 2:
                             edad.append(fichas[i]["fecha_nacimiento"])
-
     return nom,ape,rut,pos,con,edad
 
-
+def conseguirContenidos(arquetipos):
+    ArquetiposJson=json.loads(arquetipos)
+    Contenidos=[]
+    for i in range(len(ArquetiposJson)):
+        for Key in ArquetiposJson[i]:
+            if Key=="text":
+                Origen1=ArquetiposJson[i][Key]
+            if "estructura" in Key:
+                for Key2 in ArquetiposJson[i][Key]:
+                    if Key2=="text":
+                        Origen2=ArquetiposJson[i][Key][Key2]
+                    if "nodo" in Key2:
+                        for Key3 in ArquetiposJson[i][Key][Key2]:
+                            if Key3=="text":
+                                Origen3=ArquetiposJson[i][Key][Key2][Key3]
+                            if "contenido" in Key3:
+                                if (ArquetiposJson[i][Key][Key2][Key3]!=[]):
+                                    for Contenido in ArquetiposJson[i][Key][Key2][Key3]:
+                                        Contenidos.append((Origen1,Origen2,Origen3,Contenido["text"]))
+    #for X,Y in Contenidos:
+        #print(X,"-",Y)
+    return Contenidos
 
     

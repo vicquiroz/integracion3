@@ -159,6 +159,17 @@ export const MosArq = (props) => {
                     </Table>)
         }
     }
+    function mostrarArquetipos(arquetipos){
+        if(arquetipos!=null){
+            var Lista=[]
+            for(let i in arquetipos){
+                Lista.push(<li key={i}>{arquetipos[i].toString()}</li>)
+            }
+            return(
+                <ul>{Lista}</ul>
+                )
+        }
+    }
     return(
         <div>
                 <div>
@@ -168,7 +179,9 @@ export const MosArq = (props) => {
                 <div>
                     {estadigrafo(props.estArq)}
                 </div>
-
+                <div>
+                    {mostrarArquetipos(props.listado)}
+                </div>
         </div>       
     )
 }

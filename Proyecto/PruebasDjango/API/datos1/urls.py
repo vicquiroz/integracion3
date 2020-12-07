@@ -16,5 +16,6 @@ urlpatterns = [
     url(r'tablaFDesdeArchivo/',views.TablaFrecuenciaDesdeArchivo),
     url(r'ObtieneNombres/',views.GetNombres),
     url(r'graficaArquetipo/',views.GraficaArq),
-    url(r'tablaFArq/',views.TablaFrecuenciaArq)
+    url(r'tablaFArq/',views.TablaFrecuenciaArq),
+    url(r'contenidosArq/',views.ContenidosArq)
 ]
