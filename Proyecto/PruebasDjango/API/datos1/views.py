@@ -121,7 +121,7 @@ def GraficaArq(request):
         consulta = parametro[1]
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            nom,ape,rut,pos,con = arquetipos.consigue(dato,consulta,1)
+            nom,ape,rut,pos,con,_ = arquetipos.consigue(dato,consulta,1)
             nom,val = arquetipos.suma(nom,ape,rut,pos,con)
             graf = [[nom,val]]
         return Response(graf)

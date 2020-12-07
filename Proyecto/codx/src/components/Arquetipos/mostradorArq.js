@@ -1,8 +1,24 @@
 import React from 'react'
 import '../comps.css'
 import {Table} from 'reactstrap'
-import CanvasJSReact from '../../assets/canvasjs.react'
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+import {HorizontalBar} from 'react-chartjs-2'
+
+
+
+const getRandomColors = (numbOfBars) =>{
+    const letters = "0123456789ABCDEF".split("");
+    let colors = [];
+    for(let i = 0; i< numbOfBars; i++){
+        let color = "#";
+        for(let k = 0; k < 6 ; k++){
+            color += letters[Math.floor(Math.random() * 16)];
+
+        }
+        colors.push(color);
+    }
+    return colors;
+}
 export const MosArq = (props) => {
     function grafica(datos){
         if(datos!=null){
@@ -17,34 +33,80 @@ export const MosArq = (props) => {
             } 
             let labs=[]
             let val=[]
+            let labels1=[]
             labs = Titulo[0]
             val = Valor[0]
             for(let x in labs){
-                DataPoints.push({label:labs[x],y:val[x]})
+                DataPoints.push(labs[x])
+                labels1.push(val[x])
             }
+            console.log(labels1)
+            console.log(DataPoints)
             
-            const grafico = {
-                animationEnabled:true,
-                theme:"dark2",
-                zoomEnabled: true,
-                title: {
-                  text: "Grafico de cantidad"
-                },
-                axisY: {
-                    includeZero: true,
-                },
-                axisX:{
-                    reversed:true,
-                    labelFontSize: 10,
-                  },
-                data: [{				
-                          type: "bar",
-                          dataPoints: DataPoints
-                          
-                 }]
+            const data = {
+                
+                labels:DataPoints,
+                datasets:[{
+                    
+                    //label: "Grafico",
+                    data:labels1,
+                    backgroundColor: getRandomColors(labels1.length), 
+                    
+                    responsive: true,
+                    title: { text: "THICCNESS SCALE", display: true },
+                    
+                    scales: {
+                        yAxes: [
+                          {
+                            ticks: {
+                              autoSkip: true,
+                              maxTicksLimit: 10,
+                              beginAtZero: true,
+                            },
+                            gridLines: {
+                              display: false,
+                            },
+                          },
+                        ],
+                        xAxes: [
+                          {
+                            gridLines: {
+                              display: false,
+                            },
+                          },
+                        ],
+                      },
+                      pan: {
+                        enabled: true,
+                        mode: "xy",
+                        speed: 1,
+                        threshold: 1,
+                      },
+                      zoom: {
+                        enabled: true,
+                        drag: false,
+                        mode: "xy",
+                        limits: {
+                          max: 1,
+                          min: 0.5,
+                        },
+                        rangeMin: {
+                            x: 2,
+                            y: 1,
+                          },
+                          rangeMax: {
+                            x: 10,
+                            y: 150,
+                          }
+                          ,
+                      },
+            
+                }]
+                
+                
              }
             return(
-                <CanvasJSChart options = {grafico}/>
+                <HorizontalBar data={data}/>
             )
         }
     }
