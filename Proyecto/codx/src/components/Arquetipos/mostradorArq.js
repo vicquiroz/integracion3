@@ -22,7 +22,6 @@ const getRandomColors = (numbOfBars) =>{
 export const MosArq = (props) => {
     function grafica(datos){
         if(datos!=null){
-            console.log(datos)
             var Titulo=[]
             var Valor=[]
             
@@ -66,7 +65,7 @@ export const MosArq = (props) => {
                             display: false
                          },
                          tooltips: {
-                            enabled: false
+                            enabled: true
                          },
                
                 
@@ -75,7 +74,7 @@ export const MosArq = (props) => {
                         ticks: {
                             fontColor: "white",
                             fontSize: 10,
-                            stepSize: 0.5   ,
+                            stepSize: 0.5  ,
                             beginAtZero: true
                         }
                     }],
