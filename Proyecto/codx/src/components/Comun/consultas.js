@@ -210,7 +210,6 @@ export function GetNombres(set,setLista){
                 Mens.push(<DropdownItem onClick={()=>ConseguirArchivo(set,Datos[x][1])} key={x}>{Datos[x][0]}</DropdownItem>)
             }
             setLista(Mens)
-            alert("Se ha cargado la lista")
         })
         .catch((error) => {
             console.log(error);

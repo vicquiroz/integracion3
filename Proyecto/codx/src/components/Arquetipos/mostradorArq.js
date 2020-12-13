@@ -95,7 +95,7 @@ export const MosArq = (props) => {
         zoom: {
           enabled: true,
           drag: false,
-          mode: "xy",
+          mode: "y",
 
           rangeMin: { //Rango minimo de el grafco
             x: 0,

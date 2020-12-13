@@ -94,7 +94,7 @@ export const Mos = (props) => { //constante Mos que recive los datos para genera
         zoom: { //con zoom activamos la funcion de poder realizar zoom dentro del grafico
           enabled: true,
           drag: false,
-          mode: "xy",
+          mode: "y",
           rangeMin: {
             x: 0,
             y: 0, },
