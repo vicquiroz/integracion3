@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -- coding: utf-8 --
 import json
-from matplotlib import pyplot as plt
-import pandas as pd
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import statistics as stats

@@ -121,8 +121,8 @@ def GraficaArq(request):
         consulta = parametro[1]
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            nom,ape,rut,pos,con,_ = arquetipos.consigue(dato,consulta,1)
-            nom,val = arquetipos.suma(nom,ape,rut,pos,con)
+            nom,ape,rut,pos,con,_ = arquetipos.Consigue(dato,consulta,1)
+            nom,val = arquetipos.Suma(nom,ape,rut,pos,con)
             graf = [[nom,val]]
         return Response(graf)
 
@@ -136,7 +136,7 @@ def TablaFrecuenciaArq(request):
         estadigrafos=None
         if(len(archivo)>0):
             dato = json.loads(archivo)
-            _,_,_,_,_,ed = arquetipos.consigue(dato,consulta,2)
+            _,_,_,_,_,ed = arquetipos.Consigue(dato,consulta,2)
             for i in range(len(ed)):
                 edad.append(estadistica.Edad(ed[i]))
             estadigrafos=estadistica.TablaFrecuencia(edad)
@@ -148,7 +148,7 @@ def ContenidosArq(request):
         Datos=datos1.objects.filter(nombre="Arquetipos")
         if(len(Datos)>0):
             Resp=Datos[0].datoT
-            Contenidos=arquetipos.conseguirContenidos(Resp)
+            Contenidos=arquetipos.ConseguirContenidos(Resp)
             return Response(Contenidos)
         else:
             return Response(False)
