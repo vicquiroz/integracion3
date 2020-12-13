@@ -37,6 +37,7 @@ def Consigue(fichas,consulta,pet): #Funcion la cual consigue todos los datos que
     pos = [] #arreglo para posicion.
     con = [] #arreglo para consultas
     edad = []#arreglo para la edad
+    consulta=consulta.split("/")
     for i in range(len(fichas)): #arreglo que recorre fichas 
         for j in range(len(fichas[i][ses])): # ya dentro de fichas entra a sesiones_medica
             for k in range(len(fichas[i][ses][j][arq])): # dentro de sesiones_medica entra a arquetipos
@@ -76,11 +77,11 @@ def ConseguirContenidos(arquetipos):
                                         #Contenidos.append((Origen1,Origen2,Origen3,Contenido["text"]))
                                         #Contenidos.append((Origen1,Origen3,Contenido["text"]))
                                         Contenidos1.append((Origen1))
-                                        Contenidos2.append((Origen1+", "+Origen3))
-                                        Contenidos3.append((Origen1+", "+Origen3+", "+Contenido["text"]))
+                                        Contenidos2.append((Origen1+"/"+Origen3))
+                                        Contenidos3.append((Origen1+"/"+Origen3+"/"+Contenido["text"]))
                                 else:
                                     Contenidos1.append((Origen1))
-                                    Contenidos2.append((Origen1+", "+Origen3))
+                                    Contenidos2.append((Origen1+"/"+Origen3))
     Contenidos=Contenidos1+Contenidos2+Contenidos3
     Contenidos=list(dict.fromkeys(Contenidos))
     return Contenidos

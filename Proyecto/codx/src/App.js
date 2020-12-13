@@ -97,7 +97,6 @@ function App() {
                 <MosArq
                   datosArq={datosArq}
                   estArq={estadigrafoArq}
-                  listado={listado}
                 />
               </Col>
             </Route>

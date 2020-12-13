@@ -150,21 +150,11 @@ export const MosArq = (props) => {
       );
     }
   }
-  function mostrarArquetipos(arquetipos) { // Funcion que mostrara los arquetipos ordenadamente
-    if (arquetipos != null) { // Verifica si el archivo tiene datos
-      var Lista = [];
-      for (let i in arquetipos) { // arreglo que recorrera todo el archivo
-        Lista.push(<li key={i}>{arquetipos[i].toString()}</li>); // dentro de Lista lo mostrara en formato de li (lista), y transformara a String
-      }
-      return <ul>{Lista}</ul>; // Muestra El arreglo de lista
-    }
-  }
   return ( // Se llaman todas las funciones para que se muestraen en pantalla.
     <div>
       <div>{Grafica(props.datosArq)}</div> 
       <br />
       <div>{estadigrafo(props.estArq)}</div>
-      <div>{mostrarArquetipos(props.listado)}</div>
     </div>
   );
 };

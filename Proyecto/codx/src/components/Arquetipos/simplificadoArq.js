@@ -20,7 +20,8 @@ import {
 import "../comps.css";
 import "@szhsin/react-menu/dist/index.css";
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import {TextField} from '@material-ui/core';
+import {TextField,ThemeProvider } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
 export const SimArq = (props) => {
   const [dropdownOpen, setOpen] = useState(false);
   const toggle = () => setOpen(!dropdownOpen);
@@ -29,6 +30,20 @@ export const SimArq = (props) => {
   const LstArq = (ListaArqRes) => {
     setListaArq(ListaArqRes);
   };
+  const theme = createMuiTheme({
+    palette: {
+      type:'dark',
+      palette:{
+        text:"#fff"
+      }
+    },
+  })
+  if(props.listado!==undefined){
+    var Lista=props.listado
+  }
+  else{
+    var Lista=[""]
+  }
   return ( 
     <div id="Simplificado">
       <Nav>
@@ -84,14 +99,16 @@ export const SimArq = (props) => {
           </Button>
         </NavItem>
         <NavItem>
-          <Autocomplete
-            id="Buscador"
-            options={props.listado}
-            style={{ width: 300 }}
-            renderInput={(params) => (
-              <TextField {...params}  variant="outlined" />
-            )}
-          />
+          <ThemeProvider theme={theme}>
+            <Autocomplete
+              id="Buscador"
+              options={Lista}
+              style={{ width: 300 }}
+              renderInput={(params) => (
+                <TextField {...params}  variant="filled"/>
+              )}
+            />
+          </ThemeProvider>
         </NavItem>
         <NavItem>
           <Button

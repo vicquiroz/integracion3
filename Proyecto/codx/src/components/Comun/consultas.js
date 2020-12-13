@@ -210,6 +210,7 @@ export function GetNombres(set,setLista){
                 Mens.push(<DropdownItem onClick={()=>ConseguirArchivo(set,Datos[x][1])} key={x}>{Datos[x][0]}</DropdownItem>)
             }
             setLista(Mens)
+            alert("Se ha cargado la lista")
         })
         .catch((error) => {
             console.log(error);
@@ -272,6 +273,7 @@ export function ConseguirContenidosArq(setListado){
         .then((response) => {
             if(response.data!==false){
                 setListado(response.data)
+                alert("Se ha cargado las consultas")
             }
             else{
                 alert("No se ha podido conseguir los Arquetipos")
