@@ -72,6 +72,8 @@ def ConseguirContenidos(arquetipos):
                                 if (ArquetiposJson[i][Key][Key2][Key3]!=[]):
                                     for Contenido in ArquetiposJson[i][Key][Key2][Key3]:
                                         Contenidos.append((Origen1,Origen2,Origen3,Contenido["text"]))
+                                else:
+                                    Contenidos.append((Origen1,Origen2,Origen3))
    
     return Contenidos
 
