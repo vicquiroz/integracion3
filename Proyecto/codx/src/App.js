@@ -13,39 +13,39 @@ import { Container, Row, Col } from "reactstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  const [archivo, setArchivo] = useState();
+  const [archivo, setArchivo] = useState(); //UseState para "Archivo" 
   const Res = (ArchivoRes) => {
     setArchivo(ArchivoRes);
   };
-  const [archivoArq, setArchivoArq] = useState();
+  const [archivoArq, setArchivoArq] = useState(); //UseState para "ArchivoArq" (Arquetipos)
   const ResArq = (ArchivoArqRes) => {
     setArchivoArq(ArchivoArqRes);
   };
-  const [datos, setGrafico] = useState();
+  const [datos, setGrafico] = useState();//UseState para "Grafico"
   const Gra = (DatosRes) => {
     setGrafico(DatosRes);
   };
-  const [datosArq, setGraficoArq] = useState();
+  const [datosArq, setGraficoArq] = useState(); //UseState para "datosArq"(Arquetipos)
   const GraArq = (DatosArqRes) => {
     setGraficoArq(DatosArqRes);
   };
-  const [campos, setCampos] = useState();
+  const [campos, setCampos] = useState(); //UseState para "Campos"
   const Cmp = (DamposRes) => {
     setCampos(DamposRes);
   };
-  const [consulta, setConsulta] = useState();
+  const [consulta, setConsulta] = useState();//UseState para "Consulta"
   const Con = (ConsultaRes) => {
     setConsulta(ConsultaRes);
   };
-  const [estadigrafo, setEstadigrafo] = useState();
+  const [estadigrafo, setEstadigrafo] = useState();//UseState para "Estadigrafo"
   const Est = (EstadigrafoRes) => {
     setEstadigrafo(EstadigrafoRes);
   };
-  const [estadigrafoArq, setEstadigrafoArq] = useState();
+  const [estadigrafoArq, setEstadigrafoArq] = useState();//UseState para "EstadigrafoArq"(Arquetipos)
   const EstArq = (EstadigrafoArqRes) => {
     setEstadigrafoArq(EstadigrafoArqRes);
   };
-  const [listado, setListado] = useState();
+  const [listado, setListado] = useState();//UseState para "Listado"
   const Lst = (ListadoRes) => {
     setListado(ListadoRes);
   };
@@ -53,7 +53,7 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Container>
+        <Container> 
           <Row>
             <Route path="/">
               <Route path="/" exact component={Home} />
@@ -61,11 +61,11 @@ function App() {
             <Route path="/modogeneral">
               <div>
                 <Exa res={Res} />
-                <Sim
-                  env={archivo}
-                  res={Res}
-                  setGrafico={Gra}
-                  camps={campos}
+                <Sim        //Sim en el "modo General"
+                  env={archivo}       //Como se puede ver aca 
+                  res={Res}          //se llaman cada uno de nuestros 
+                  setGrafico={Gra}  //hooks de estado (useState)que creamos anteriormente
+                  camps={campos}   //creamos anteriormente
                   setEstadigrafo={Est}
                 />
               </div>
@@ -79,7 +79,7 @@ function App() {
             </Route>
             <Route path="/arquetipos">
               <div>
-                <SimArq
+                <SimArq //Sim en el "manejo de arquetipos"
                   envArq={archivoArq}
                   setListado={Lst}
                   listado={listado}
@@ -94,7 +94,7 @@ function App() {
                 <VisArq envArq={archivoArq} />
               </Col>
               <Col sm="6">
-                <MosArq
+                <MosArq // Mostrara todo en la parte de Arquetipos
                   datosArq={datosArq}
                   estArq={estadigrafoArq}
                 />
