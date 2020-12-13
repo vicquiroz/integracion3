@@ -19,7 +19,8 @@ import {
 } from "../Comun/consultas";
 import "../comps.css";
 import "@szhsin/react-menu/dist/index.css";
-
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import {TextField} from '@material-ui/core';
 export const SimArq = (props) => {
   const [dropdownOpen, setOpen] = useState(false);
   const toggle = () => setOpen(!dropdownOpen);
@@ -28,7 +29,6 @@ export const SimArq = (props) => {
   const LstArq = (ListaArqRes) => {
     setListaArq(ListaArqRes);
   };
-
   return ( 
     <div id="Simplificado">
       <Nav>
@@ -83,11 +83,16 @@ export const SimArq = (props) => {
             Buscar coincidencia{" "}
           </Button>
         </NavItem>
-
         <NavItem>
-          <Input id="Buscador"></Input>
+          <Autocomplete
+            id="Buscador"
+            options={props.listado}
+            style={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField {...params}  variant="outlined" />
+            )}
+          />
         </NavItem>
-
         <NavItem>
           <Button
             color="info"

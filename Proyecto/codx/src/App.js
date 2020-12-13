@@ -82,6 +82,7 @@ function App() {
                 <SimArq
                   envArq={archivoArq}
                   setListado={Lst}
+                  listado={listado}
                   resArq={ResArq}
                   setGraficoArq={GraArq}
                   con={consulta}

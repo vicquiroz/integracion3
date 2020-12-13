@@ -55,15 +55,17 @@ def Consigue(fichas,consulta,pet): #Funcion la cual consigue todos los datos que
 
 def ConseguirContenidos(arquetipos):
     ArquetiposJson=json.loads(arquetipos) # Carga el json arquetipos
-    Contenidos=[] # crea un arreglo de contenidos
+    Contenidos1=[] # crea un arreglo de contenidos
+    Contenidos2=[]
+    Contenidos3=[]
     for i in range(len(ArquetiposJson)): 
         for Key in ArquetiposJson[i]: 
             if Key=="text":
                 Origen1=ArquetiposJson[i][Key]
             if "estructura" in Key:
                 for Key2 in ArquetiposJson[i][Key]:
-                    if Key2=="text":
-                        Origen2=ArquetiposJson[i][Key][Key2]
+                    #if Key2=="text":
+                        #Origen2=ArquetiposJson[i][Key][Key2]
                     if "nodo" in Key2:
                         for Key3 in ArquetiposJson[i][Key][Key2]:
                             if Key3=="text":
@@ -71,10 +73,16 @@ def ConseguirContenidos(arquetipos):
                             if "contenido" in Key3:
                                 if (ArquetiposJson[i][Key][Key2][Key3]!=[]):
                                     for Contenido in ArquetiposJson[i][Key][Key2][Key3]:
-                                        Contenidos.append((Origen1,Origen2,Origen3,Contenido["text"]))
+                                        #Contenidos.append((Origen1,Origen2,Origen3,Contenido["text"]))
+                                        #Contenidos.append((Origen1,Origen3,Contenido["text"]))
+                                        Contenidos1.append((Origen1))
+                                        Contenidos2.append((Origen1+", "+Origen3))
+                                        Contenidos3.append((Origen1+", "+Origen3+", "+Contenido["text"]))
                                 else:
-                                    Contenidos.append((Origen1,Origen2,Origen3))
-   
+                                    Contenidos1.append((Origen1))
+                                    Contenidos2.append((Origen1+", "+Origen3))
+    Contenidos=Contenidos1+Contenidos2+Contenidos3
+    Contenidos=list(dict.fromkeys(Contenidos))
     return Contenidos
 
     
