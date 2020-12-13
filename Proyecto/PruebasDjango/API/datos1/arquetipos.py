@@ -39,10 +39,6 @@ def Consigue(fichas,consulta,pet): #Funcion la cual consigue todos los datos que
     edad = []#arreglo para la edad
     ban1,ban2 = False,False
     consulta=consulta.split("/")
-    #if len(consulta)==2:
-        #tipo = [1,3]
-    #if len(consulta)==3:
-        #tipo = [1,3,4]
 
     for i in range(len(fichas)): #arreglo que recorre fichas 
         for j in range(len(fichas[i][ses])): # recorremos las sesiones medicas
@@ -83,28 +79,22 @@ def ConseguirContenidos(arquetipos):
     ArquetiposJson=json.loads(arquetipos) # Carga el json arquetipos
     Contenidos1=[] # crea un arreglo de contenidos
     Contenidos2=[]
-    for i in range(len(ArquetiposJson)): 
-        for Key in ArquetiposJson[i]: 
-            if Key=="text":
+    for i in range(len(ArquetiposJson)): #Recorre El largo de "ArquetiposJson"
+        for Key in ArquetiposJson[i]:  #Una vez dentro los va buscando por partes
+            if Key=="text": # Primera parte "text"
                 Origen1=ArquetiposJson[i][Key]
-            if "estructura" in Key:
-                for Key2 in ArquetiposJson[i][Key]:
-                    #if Key2=="text":
-                        #Origen2=ArquetiposJson[i][Key][Key2]
-                    if "nodo" in Key2:
+            if "estructura" in Key: # Segunda parte "estructura"
+                for Key2 in ArquetiposJson[i][Key]:  
+                    if "nodo" in Key2:# Tercera parte "nodo"
                         for Key3 in ArquetiposJson[i][Key][Key2]:
-                            if Key3=="text":
-                                Origen3=ArquetiposJson[i][Key][Key2][Key3]
-                            if "contenido" in Key3:
-                                if (ArquetiposJson[i][Key][Key2][Key3]!=[]):
-                                    for Contenido in ArquetiposJson[i][Key][Key2][Key3]:
-                                        #Contenidos.append((Origen1,Origen2,Origen3,Contenido["text"]))
-                                        #Contenidos.append((Origen1,Origen3,Contenido["text"]))
-                                        Contenidos1.append((Origen1))
-                                        Contenidos2.append((Origen1+"/"+Contenido["text"]))
+                            if "contenido" in Key3: # Cuarta parte "contenido"
+                                if (ArquetiposJson[i][Key][Key2][Key3]!=[]): # ArquetiposJson verifica si es un array vacio
+                                    for Contenido in ArquetiposJson[i][Key][Key2][Key3]: # Agrega datos
+                                        Contenidos1.append((Origen1)) # primer recorrido para agregar datos
+                                        Contenidos2.append((Origen1+"/"+Contenido["text"])) # segundo recorrido
                                 else:
-                                    Contenidos1.append((Origen1))
-    Contenidos=Contenidos1+Contenidos2
+                                    Contenidos1.append((Origen1)) # Contenido1 agrega "Origen1"
+    Contenidos=Contenidos1+Contenidos2 
     Contenidos=list(dict.fromkeys(Contenidos))
     return Contenidos
 

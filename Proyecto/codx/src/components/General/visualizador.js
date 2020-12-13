@@ -3,9 +3,7 @@ import ReactJson from 'react-json-view'
 import '../comps.css';
 export const Vis = (props) => { //Funcion para visualizador
     var Seleccionados=[];
-    /*function onEdit(fields){
-        console.log(fields)
-    }*/
+   
     function onSelect(fields){  // Funcion para seleccionar los campos
         let StrFields=JSON.stringify(fields) //Convierte el texto en json
         if(Seleccionados.includes(StrFields)===false){ // Verifica si Strfields esta vacio

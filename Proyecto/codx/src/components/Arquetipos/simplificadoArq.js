@@ -75,7 +75,7 @@ export const SimArq = (props) => {
               onClick={() => ConseguirContenidosArq(props.setListado)}
             >
               {" "}
-              Prueba Listado Arquetipos{" "} 
+              Cargar lista de Arquetipos{" "} 
             </Button>{/* Boton para Generar la consulta y mostrar el listado de arquetipos*/}
           </div>
         </NavItem>
