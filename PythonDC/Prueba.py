@@ -12,65 +12,84 @@ def edad(dato):
     fecha_nacimiento = datetime.strptime(fechaStr, "%d-%m-%Y")
     edad = relativedelta(datetime.now(), fecha_nacimiento)
     return edad.years
+      
 
-
-def mostrar(dato,petUno,petDos):
-    guar = [] #arreglo que contendra los datos pedidos
-    for i in range(len(dato)):
-        if (isinstance(dato[i][petUno], list)): #si la primera peticion es un arreglo
-            for j in range(len(dato[i][petUno])): 
-                guar.append(dato[i][petUno][j][petDos]) #guarda los datos de la segunda peticion 
-                
-        else: #sí el anterior no es un arreglo 
-            guar.append(dato[i][petUno]) #se almacenan los datos 
-    return(guar)        
-
-def suma(val):
-    nombres = [] #arreglo que contiene los nombres
+def suma(n,a,r,p,c):
     cont = [] #arreglo que contiene la cantidas de veces repetido el nombre
-    nombres.append(val[0])#se necesita que se inicie con un valor
+    rut = []
+    con = []
+    pos = 0
+    nombresFin = [n[0]+" "+a[0]+"\n"+str(r[0])+" pos:"+str(p[0])+" consulta:"+str(c[0])]
+    rut.append(r[0])
     cont.append(0)#se necesita que se inicie con un valor
-    for i in range(len(val)):
-        resNom = nombres #comparador de nombres
+    con.append(str(c[0]))
+    for i in range(len(n)):
+        resRut = rut #comparador de nombres
         resCont = cont #comparador de cantidad
-        
-        for j in range(len(nombres)):
+        for j in range(len(rut)):
     
-            if nombres[j] == val[i]: #si detecta que almacenado en nombre existe una variable igual a la de los datos
+            if rut[j] == r[i]: #si detecta que almacenado en nombre existe una variable igual a la de los datos
                 cont[j] = cont[j]+1 #le suma 1 a su contador correspondiente
                 resCont = None #se reinicia el comparador
-                resNom = None #se reinicia el comparador
+                resRut = None #se reinicia el comparador
+                if i != 0:
+                    if con[pos] != str(c[i]):
+                        nombresFin[pos] = nombresFin[pos]+","+str(c[i])
 
-        if resNom == nombres and resCont == cont: #si las variables y sus comparadores coinciden
-            nombres.append(val[i]) #se agrega el nombre
+        if resRut == rut and resCont == cont: #si las variables y sus comparadores coinciden
+            con.append(str(c[i]))
+            pos = pos + 1
+            nombresFin.append(n[i]+" "+a[i]+"\n"+str(r[i])+" pos:"+str(p[i])+" consulta:"+str(c[i])) #se agrega el nombre
+            rut.append(r[i])
             cont.append(1) #se agrega un 1 al contador 
 
-    return nombres, cont
-        
-    
-def graficar(ejex, ejey):
-    ancho= 0.5 #ancho para el grafico de barras
-    plt.bar(ejex, ejey, ancho) #se pasan los datos para completar 
-    plt.savefig('grafico.png', transparent=False)#se exporta el grafico en png
-    plt.show()
+    return nombresFin, cont
 
-def tabla(dato):
-    fig, ax = plt.subplots(dpi=500)
-    fig.patch.set_visible(False)
-    ax.axis('off')
-    d = dato[0]
-    del d['profesionales_que_atendieron']
-    del d['sesiones_medica']
-    print(d)
-    df = pd.DataFrame(data=d)
-    print(df)
-    ax.table(cellText=df.values, rowLabels=["valor"],colLabels=df.columns,cellLoc='center', loc='center')
-    fig.tight_layout()
-    plt.show()
-
-with open('His_clin.json', encoding='utf-8') as file: #abrir imagen con utf-8 para mayor comprension
+with open('prueba.json', encoding='utf-8') as file: #abrir imagen con utf-8 para mayor comprension
     dato = json.load(file) #guardamos el contenido del json en data
-    print(dato)
+    #print(fichas[1])
+
+
+consulta = "Left eye"
+ses = "sesiones_medica"
+arq = "arquetipos"
+
+def consigue(fichas):
+    nom = []
+    ape = []
+    rut = []
+    pos = []
+    con = []
+    arque = []
+    for i in range(len(fichas)):
+        for j in range(len(fichas[i][ses])):
+            for k in range(len(fichas[i][ses][j][arq])):
+                for l in range(len(fichas[i][ses][j][arq][k])):
+                    #print(fichas[i][ses][j][arq][k][l]["clave"])
+                    if consulta == fichas[i][ses][j][arq][k][l]["valor"]:
+                        nom.append(fichas[i]["nombre"])
+                        ape.append(fichas[i]["apellidos"])
+                        rut.append(fichas[i]["rut"])
+                        pos.append(i)
+                        con.append(j)
+    return nom,ape,rut,pos,con
+
+nom,ape,rut,pos,con = consigue(dato)
+a,b = suma(nom,ape,rut,pos,con)
+for i in range(len(a)):
+    print(a[i])
+    print(b[i])
+#for i in range(len(nom)):
+    #print(nom[i]+" "+ape[i]+"\n"+str(rut[i])+" pos:"+str(pos[i])+" consulta:"+str(con[i]))
+#for i in range(len(nom)):
+    #print(pos[i])
+    #print(con[i])
+#print(pos)
+#print(cont)
+
+
+
+    
     #print(data[0]['sesiones_medica'][0]['nombre_sesion'])
 
 
