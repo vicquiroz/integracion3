@@ -48,7 +48,7 @@ export const SimArq = (props) => {
     <div id="Simplificado">
       <Nav>{/* Nav viene de reacstrap y define un navegador*/}
         <NavItem>{/* Se genera cada item dentro de la barra de navegacion*/}
-          <NavbarText>Manejo BD</NavbarText> {/* comment */}
+          <NavbarText>Manejo BD</NavbarText> 
           <div className="btn-group btn-sm">
             <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
               <Button
@@ -56,8 +56,7 @@ export const SimArq = (props) => {
                 color="primary"
                 onClick={() => GetNombres(props.resArq, LstArq)}
               >{/* Boton para cargar las listas */}
-                {" "}
-                Cargar lista{" "}
+                Cargar lista
               </Button>
               <DropdownToggle split color="primary" />
               <DropdownMenu>{/* Dropdown que contendra las listas cargadas previamente*/}
@@ -67,22 +66,20 @@ export const SimArq = (props) => {
               </DropdownMenu>
             </ButtonDropdown>
             <Button color="info" onClick={() => PostDatos(props.envArq)}>
-              {" "}
-              Actualizar{" "} {/* Boton que subira el archivo a la base de datos*/}
+              Actualizar {/* Boton que subira el archivo a la base de datos*/}
             </Button>
             <Button
               color="danger"
               onClick={() => ConseguirContenidosArq(props.setListado)}
             >
-              {" "}
-              Cargar lista de Arquetipos{" "} 
+              Cargar lista de Arquetipos
             </Button>{/* Boton para Generar la consulta y mostrar el listado de arquetipos*/}
           </div>
         </NavItem>
         <br />
 
         <NavItem>
-          <NavbarText> Data Science </NavbarText>{/* Seccion de Data Science dentro del navegador*/}
+        <NavbarText> Data Science  </NavbarText>{/* Seccion de Data Science dentro del navegador*/}
           <Button
             color="info"
             className="btn btn-primary btn-md"
@@ -94,8 +91,7 @@ export const SimArq = (props) => {
               )
             }
           >
-            {" "}
-            Buscar coincidencia{" "} {/* Boton que cumple la funcion de graficar los datos registrado en buscador*/}
+            Buscar coincidencia {/* Boton que cumple la funcion de graficar los datos registrado en buscador*/}
           </Button>
         </NavItem>
         <NavItem>
@@ -122,8 +118,7 @@ export const SimArq = (props) => {
               )
             }
           >
-            {" "}
-            Tabla de frecuencias de edad{" "}
+            Tabla de frecuencias de edad
           </Button> {/* Boton que cumple la funcion de llamar y mostrar la tabla de frecuencia*/}
         </NavItem>
       </Nav>

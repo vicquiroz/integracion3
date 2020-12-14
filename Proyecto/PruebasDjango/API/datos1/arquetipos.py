@@ -37,23 +37,23 @@ def Consigue(fichas,consulta,pet): #Funcion la cual consigue todos los datos que
     pos = [] #arreglo para posicion.
     con = [] #arreglo para consultas
     edad = []#arreglo para la edad
-    ban1,ban2 = False,False
-    consulta=consulta.split("/")
+    ban1,ban2 = False,False #creamos banderas para corroborar si las consultas estan en una sesion 
+    consulta=consulta.split("/") #separamos las partes de la consulta por "/" en un arreglo
 
     for i in range(len(fichas)): #arreglo que recorre fichas 
         for j in range(len(fichas[i][ses])): # recorremos las sesiones medicas
             for k in range(len(fichas[i][ses][j][arq])): # recorremos cada arquetipo
                 for l in range(len(fichas[i][ses][j][arq][k])): #recorremos cada nodo presente en los arquetipos
                     if len(consulta)==1:
-                        if consulta[0] == fichas[i][ses][j][arq][k][l]["valor"] and fichas[i][ses][j][arq][k][l]["tipo"]==1: # dentro de consultas consigue el "valor"
-                            ban1 = True
+                        if consulta[0] == fichas[i][ses][j][arq][k][l]["valor"] and fichas[i][ses][j][arq][k][l]["tipo"]==1: # verificamos que la consulta esta en la sesion medica y es del tipo que corresponde
+                            ban1 = True # si fue verdadero lo marcamos con la bandera correspondiente
                     if len(consulta)==2:
-                        if consulta[0] == fichas[i][ses][j][arq][k][l]["valor"] and fichas[i][ses][j][arq][k][l]["tipo"]==1: # dentro de consultas consigue el "valor"
-                            ban1 = True
-                        if consulta[1] == fichas[i][ses][j][arq][k][l]["valor"] and fichas[i][ses][j][arq][k][l]["tipo"]==4:
-                            ban2 = True
-            if len(consulta) == 1:
-                if ban1:
+                        if consulta[0] == fichas[i][ses][j][arq][k][l]["valor"] and fichas[i][ses][j][arq][k][l]["tipo"]==1: #  verificamos que la consulta esta en la sesion medica y es del tipo que corresponde
+                            ban1 = True # si fue verdadero lo marcamos con la bandera correspondiente
+                        if consulta[1] == fichas[i][ses][j][arq][k][l]["valor"] and fichas[i][ses][j][arq][k][l]["tipo"]==4: #  verificamos que la consulta esta en la sesion medica y es del tipo que corresponde
+                            ban2 = True # si fue verdadero lo marcamos con la bandera correspondiente
+            if len(consulta) == 1:#si el largo del arreglo de la consulta es 1
+                if ban1: # y la bandera es verdadera
                     if pet == 1: 
                         nom.append(fichas[i]["nombre"]) #Añade los datos de nombre a la variable "nom"
                         ape.append(fichas[i]["apellidos"]) #Añade los datos de apellidos a la variable "ape"
@@ -62,8 +62,8 @@ def Consigue(fichas,consulta,pet): #Funcion la cual consigue todos los datos que
                         con.append(j) #Añade los datos de j a la variable con
                     if pet == 2: 
                         edad.append(fichas[i]["fecha_nacimiento"]) # añade decha de nacimiento a "edad"
-            if len(consulta) == 2:
-                if ban1 and ban2:
+            if len(consulta) == 2:#si el largo del arreglo de la consulta es 2
+                if ban1 and ban2: # y las banderas son verdaderas
                     if pet == 1: 
                         nom.append(fichas[i]["nombre"]) #Añade los datos de nombre a la variable "nom"
                         ape.append(fichas[i]["apellidos"]) #Añade los datos de apellidos a la variable "ape"
@@ -72,7 +72,7 @@ def Consigue(fichas,consulta,pet): #Funcion la cual consigue todos los datos que
                         con.append(j) #Añade los datos de j a la variable con
                     if pet == 2: 
                         edad.append(fichas[i]["fecha_nacimiento"]) # añade decha de nacimiento a "edad"
-            ban1,ban2 = False,False
+            ban1,ban2 = False,False#se vuelve a marcar las banderas con falso, para que sirvan para las demas sesiones
     return nom,ape,rut,pos,con,edad
 
 def ConseguirContenidos(arquetipos):
@@ -88,14 +88,14 @@ def ConseguirContenidos(arquetipos):
                     if "nodo" in Key2:# Tercera parte "nodo"
                         for Key3 in ArquetiposJson[i][Key][Key2]:
                             if "contenido" in Key3: # Cuarta parte "contenido"
-                                if (ArquetiposJson[i][Key][Key2][Key3]!=[]): # ArquetiposJson verifica si es un array vacio
+                                if (ArquetiposJson[i][Key][Key2][Key3]!=[]): #  verifica si el contenido de ArquetiposJson no es vacio
                                     for Contenido in ArquetiposJson[i][Key][Key2][Key3]: # Agrega datos
                                         Contenidos1.append((Origen1)) # primer recorrido para agregar datos
                                         Contenidos2.append((Origen1+"/"+Contenido["text"])) # segundo recorrido
                                 else:
                                     Contenidos1.append((Origen1)) # Contenido1 agrega "Origen1"
-    Contenidos=Contenidos1+Contenidos2 
-    Contenidos=list(dict.fromkeys(Contenidos))
+    Contenidos=Contenidos1+Contenidos2 # concatena las listas de consultas posibles
+    Contenidos=list(dict.fromkeys(Contenidos)) #remueve duplicados
     return Contenidos
 
     

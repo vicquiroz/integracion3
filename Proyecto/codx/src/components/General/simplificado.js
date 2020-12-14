@@ -60,7 +60,7 @@ export const Sim = (props) => { //UseState para la dropdown
         </NavItem>
         <br />
         <NavItem>
-          <NavbarText>Data Science</NavbarText> {/* Seccion de Data Science dentro del navegador*/}
+          <NavbarText>Data Science  </NavbarText> {/* Seccion de Data Science dentro del navegador*/}
           <Menu
             className=" bg-info text-white border border-primary"
             menuButton={

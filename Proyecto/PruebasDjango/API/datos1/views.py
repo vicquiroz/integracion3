@@ -121,7 +121,7 @@ def GraficaArq(request): #Realiza la solicitud de GraficaArq
         consulta = parametro[1] # Almacena otro en consulta
         if(len(archivo)>0): #Verifica el largo de "archivo"
             dato = json.loads(archivo) #Carga el archivo json
-            nom,ape,rut,pos,con,_ = arquetipos.Consigue(dato,consulta,1)
+            nom,ape,rut,pos,con,_ = arquetipos.Consigue(dato,consulta,1)#consigue todos los datos que se necesitan para graficar
             nom,val = arquetipos.Suma(nom,ape,rut,pos,con) #Adjunta en nombre y val todos los datos de "Suma"
             graf = [[nom,val]] #Los almacena en un arreglo
         return Response(graf)

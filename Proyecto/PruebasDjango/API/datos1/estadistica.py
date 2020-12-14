@@ -52,7 +52,7 @@ def TablaFrecuencia(d): #Funcion que generara la tabla de frecuencia
         f = [] #Se crea arreglo para almacenar la frecuencia
         fr = [] #Se crea arreglo para almacenar la frecuencia relativa
         F = [] #Se crea arreglo para almacenar la frecuencia absoluta
-        Fr = [] #Se crea arreglo para almacenar frecuencia relativa acomulada
+        Fr = [] #Se crea arreglo para almacenar frecuencia relativa acumulada
         valores = [] #Se crea arreglo para almacenar valores
         n=len(d) #n sera igual al largo de los datos almacenados en d
         m=1+math.ceil(3.322*math.log10(n)) #Se calcula los cortes utilizando la regla de Struges
@@ -83,10 +83,10 @@ def TablaFrecuencia(d): #Funcion que generara la tabla de frecuencia
         fr = list(map(lambda x: round(x / n,5), fr)) #Dentro de fr se crea una lista con las frecuencias relativas
         for i in range(len(f)): #Para todos los valores dentro de f
             if i == 0: #Si el indice es 0
-                Fr[i] = Fr[i]+fr[i] #Calcula la frecuencia relativa acomulada
+                Fr[i] = Fr[i]+fr[i] #Calcula la frecuencia relativa acumulada
                 F[i] = F[i]+f[i]  #Avanza dentro de las frecuencias
             else: # Si el indice no es 0
-                Fr[i] = round(Fr[i-1]+fr[i],5) #Calcula la frecuencia relativa acomulada
+                Fr[i] = round(Fr[i-1]+fr[i],5) #Calcula la frecuencia relativa acumulada
                 F[i] = F[i-1]+f[i]  #Avanza dentro de las frecuencias
         return [["valor",inter],["MC",marca],["f",f],["fr",fr],["F",F],["Fr",Fr]]
     except: #De lo contrario retorna error

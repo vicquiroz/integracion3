@@ -64,7 +64,7 @@ function App() {
                 <Sim        //Sim en el "modo General"
                   env={archivo}       //Como se puede ver aca 
                   res={Res}          //se llaman cada uno de nuestros 
-                  setGrafico={Gra}  //hooks de estado (useState)que creamos anteriormente
+                  setGrafico={Gra}  //hooks de estado (useState)que 
                   camps={campos}   //creamos anteriormente
                   setEstadigrafo={Est}
                 />
