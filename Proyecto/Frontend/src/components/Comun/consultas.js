@@ -272,6 +272,7 @@ export function ConseguirContenidosArq(setListado){ //Funcion para conseguir el 
         .then((response) => { //Si todo sale correcto la funcion entregara una respuesta
             if(response.data!==false){ //si la respuesta es igual o del mismo tipo
                 setListado(response.data) //Se envia los la respuesta a setListado
+                alert("Se han cargado las consultas")
             }
             else{ //De lo contrario arroja un mensaje de error
                 alert("No se ha podido conseguir los Arquetipos")

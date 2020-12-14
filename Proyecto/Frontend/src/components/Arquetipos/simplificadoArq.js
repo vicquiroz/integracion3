@@ -72,7 +72,7 @@ export const SimArq = (props) => {
               color="danger"
               onClick={() => ConseguirContenidosArq(props.setListado)}
             >
-              Cargar lista de Arquetipos
+              Cargar lista de consultas
             </Button>{/* Boton para Generar la consulta y mostrar el listado de arquetipos*/}
           </div>
         </NavItem>
@@ -101,7 +101,7 @@ export const SimArq = (props) => {
               options={Lista}
               style={{ width: 300 }}
               renderInput={(params) => (
-                <TextField {...params}  variant="filled"/>
+                <TextField {...params}  variant="filled" size="small"/>
               )}
             />
           </ThemeProvider>
